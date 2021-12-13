@@ -1,15 +1,15 @@
-# RoboVault
+# Coconuts.finance
 
 ## Overview
 
-Frontend repo of [RoboVault](https://docs.robo-vault.com/). 
+Frontend repo of [Coconuts.finance](https://docs.coconuts.finance/). 
 
 ## Env
 
 Required env vars:
 
 ```
-REACT_APP_NETWORK_ID = 250 // Network ID of BSC
+REACT_APP_NETWORK_ID = 137 // Network ID of BSC
 ```
 
 ## To Run
@@ -29,4 +29,4 @@ The app will be running at http://localhost:3000/
 
 ## Credit
 
-Front end is forked from [Beefy.Finance](https://app.beefy.finance/).
+Front end is forked from [Robo-Vault](https://robo-vault.com/).
