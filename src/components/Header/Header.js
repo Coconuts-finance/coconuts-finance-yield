@@ -31,16 +31,16 @@ const Header = ({ links, isNightMode, setNightMode }) => {
         <Button href="/" className={classes.title}>
           <Hidden xsDown>
             <img
-              alt="ROBO"
-              src={require(`images/single-assets/robo-vault-logo.png`)}
+              alt="Coconuts finance"
+              src={require(`assets/img/cnc-logo.svg`)}
               height={'160px'}
               className={classes.logo}
             />
           </Hidden>
           <Hidden smUp>
             <img
-              alt="ROBO"
-              src={require(`images/single-assets/robo-vault-logo.png`)}
+              alt="Coconuts finance"
+              src={require(`assets/img/cnc-logo.svg`)}
               height={'160px'}
               className={classes.logo}
             />
@@ -112,7 +112,7 @@ const LinkSidebar = ({ name, label, icon, classes }) => (
 );
 
 const getLinkUrl = name => {
-  return name === 'buy' ? getNetworkBuyLink() : `https://${name}.robo-vault.com`;
+  return name === 'buy' ? getNetworkBuyLink() : `https://${name}.coconuts.finance`;
 };
 
 export default Header;

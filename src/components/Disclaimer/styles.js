@@ -8,7 +8,7 @@ const styles = theme => ({
   },
   disclaimer: {
     padding: '12px',
-    borderRadius: '0',
+    borderRadius: '5px',
     background: theme.palette.background.secondary,
     marginBottom: '2rem',
     fontWeight: 900,
@@ -16,7 +16,7 @@ const styles = theme => ({
   },
   annoucement: {
     padding: '12px',
-    borderRadius: '0',
+    borderRadius: '5px',
     background: theme.palette.background.announce,
     marginBottom: '2rem',
     fontWeight: 900,

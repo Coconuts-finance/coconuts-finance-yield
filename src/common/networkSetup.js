@@ -1,4 +1,5 @@
 export const networkSettings = {
+  /*
   250: {
     chainId: `0x${parseInt(250, 10).toString(16)}`,
     chainName: 'Fantom Opera',
@@ -10,6 +11,7 @@ export const networkSettings = {
     rpcUrls: ['https://rpc.ftm.tools'],
     blockExplorerUrls: ['https://ftmscan.com/'],
   },
+  */
   /*
   56: {
     chainId: `0x${parseInt(56, 10).toString(16)}`,
@@ -44,6 +46,7 @@ export const networkSettings = {
     rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
     blockExplorerUrls: ['https://cchain.explorer.avax.network/'],
   },
+  */
   137: {
     chainId: `0x${parseInt(137, 10).toString(16)}`,
     chainName: 'Polygon Mainnet',
@@ -55,8 +58,6 @@ export const networkSettings = {
     rpcUrls: ['https://rpc-mainnet.maticvigil.com/'],
     blockExplorerUrls: ['https://polygonscan.com/'],
   },
-  */
-
 };
 
 export const networkSetup = chainId => {

@@ -24,7 +24,7 @@ import createTheme from './jss/appTheme';
 import { networkSetup } from 'common/networkSetup';
 import ReactGA from 'react-ga';
 
-ReactGA.initialize("G-TMSH7GQS2X");
+ReactGA.initialize('G-TMSH7GQS2X');
 const useStyles = makeStyles(appStyle);
 
 export default function App({ children }) {
@@ -68,33 +68,45 @@ export default function App({ children }) {
           <NetworksProvider>
             <NetworksModal />
             <div
-              className={classes.page}
-              style={{ backgroundColor: theme.palette.background.default }}
+              className={classes.page_outer}
+              style={{
+                backgroundImage:
+                  'linear-gradient(180deg, ' +
+                  theme.palette.background.color1 +
+                  ' 20%, ' +
+                  theme.palette.background.color2 +
+                  ' 64%, ' +
+                  theme.palette.background.color3 +
+                  ' 100%)',
+              }}
             >
-              <Header
-                links={
-                  <HeaderLinks
-                    address={address}
-                    connected={connected}
-                    connectWallet={() => connectWallet(web3Modal)}
-                    disconnectWallet={() => disconnectWallet(web3, web3Modal)}
+              <div className={classes.page_inner}>
+                <div className={classes.page} style={{ backgroundColor: 'transparent' }}>
+                  <Header
+                    links={
+                      <HeaderLinks
+                        address={address}
+                        connected={connected}
+                        connectWallet={() => connectWallet(web3Modal)}
+                        disconnectWallet={() => disconnectWallet(web3, web3Modal)}
+                        isNightMode={isNightMode}
+                        setNightMode={() => setNightMode(!isNightMode)}
+                      />
+                    }
                     isNightMode={isNightMode}
                     setNightMode={() => setNightMode(!isNightMode)}
                   />
-                }
-                isNightMode={isNightMode}
-                setNightMode={() => setNightMode(!isNightMode)}
-              />
-              <div className={classes.container}>
-                <div className={classes.children}>
-                  {networkError && <NetworkError network={process.env.REACT_APP_NETWORK_ID} />}
-                  {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
-                  <Notifier />
+                  <div className={classes.container}>
+                    <div className={classes.children}>
+                      {networkError && <NetworkError network={process.env.REACT_APP_NETWORK_ID} />}
+                      {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
+                      <Notifier />
+                    </div>
+                  </div>
+
+                  <Footer />
                 </div>
               </div>
-
-              <Footer />
-              
             </div>
           </NetworksProvider>
         </SnackbarProvider>

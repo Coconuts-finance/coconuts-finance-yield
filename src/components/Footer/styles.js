@@ -1,13 +1,16 @@
+import { hexToRgb } from 'assets/jss/material-kit-pro-react.js';
+
 const styles = theme => ({
   root: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    maxWidth: '40rem',
-    margin: '2rem auto',
+    justifyContent: 'space-evenly',
+    width: '100%',
+    padding: '2rem',
     '@media (min-width: 769px)': {
-      margin: '2rem auto 10rem',
+      padding: '2rem 5rem',
     },
+    backgroundColor: 'rgba(' + hexToRgb(theme.palette.background.footer) + ', 0.7)',
   },
   column: {
     display: 'flex',

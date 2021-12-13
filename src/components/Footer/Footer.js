@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <div className={classes.root}>
       <div className={classes.column}>
-        <div className={classes.title}>RoboVault</div>
+        <div className={classes.title}>Coconuts.finance</div>
         <a
           href="https://docs.robo-vault.com"
           target="_blank"
@@ -35,7 +35,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://github.com/robovault"
+          href="https://github.com/chimera-defi/robo-vault-app"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -76,6 +76,16 @@ const Footer = () => {
         >
           <i className={`fab fa-discord ${classes.linkIcon}`}></i>
           <span>discord</span>
+        </a>
+
+        <a
+          href="https://t.me/coconutsfinance"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes.link}
+        >
+          <i className={`fab fa-telegram ${classes.linkIcon}`}></i>
+          <span>telegram</span>
         </a>
       </div>
     </div>

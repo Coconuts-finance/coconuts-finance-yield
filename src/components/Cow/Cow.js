@@ -18,7 +18,7 @@ const Cow = ({ total, index }) => {
   return (
     <img
       alt="cow"
-      src={require('assets/img/roboVault.png')}
+      src={require('assets/img/cnc-logo.svg')}
       style={{
         position: 'absolute',
         bottom: `${dimensions.y}rem`,

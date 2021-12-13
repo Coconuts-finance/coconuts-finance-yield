@@ -51,7 +51,7 @@
   "Vault-NotFound": "Không tìm thấy kho tiền {{vaultId}}",
   "Vaults-Back": "Trở lại các kho tiền",
   "Liquidity-Warning": "Hiện tại nền tảng cho vay của kho tiền này có thanh khoản {{shortToken}} thấp. Vậy nên các khoản tiền nạp mới sẽ được dự trữ tạm cho đến khi có thêm thanh khoản.",
-  "Collateral-Warning": "Hiện {{token}} đã đạt đến giới hạn tài sản thế chấp trên nền tảng cho vay. Vui lòng truy cập Discord của Robo-Vault để biết thêm thông tin.",
+  "Collateral-Warning": "Hiện {{token}} đã đạt đến giới hạn tài sản thế chấp trên nền tảng cho vay. Vui lòng truy cập Discord của Coconuts.finance để biết thêm thông tin.",
   "Hide-Zero-Balances": "Ẩn kho không có số dư",
   "Hide-Zero-Vault-Balances": "Các kho tiền bạn đã nạp",
   "Retired-Vaults": "Kho tiền đã ngưng hoạt động",

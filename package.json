@@ -1,7 +1,7 @@
 {
-  "name": "robo-vault",
+  "name": "coconuts-finance-yield",
   "version": "1.1.0",
-  "repository": "robotvault/robo-vault-app",
+  "repository": "chimera-defi/coconuts-finance-yield",
   "license": "MIT",
   "private": true,
   "type": "module",

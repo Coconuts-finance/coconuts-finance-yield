@@ -27,19 +27,21 @@ const NetworksProvider = ({ children }) => {
       id: '43114',
       url: 'https://avax.beefy.finance',
     },
+    */
     {
       name: 'POLYGON',
       asset: 'POLYGON',
       id: '137',
-      url: 'https://polygon.beefy.finance',
+      url: 'https://polygon.coconuts.finance',
     },
-    */
+    /*
     {
       name: 'FANTOM',
       asset: 'FTM',
       id: '250',
-      url: 'https://robo-vault.com',
+      url: 'https://fantom.beefy.finance',
     },
+    */
   ];
 
   const currentNetwork = useMemo(

@@ -7,7 +7,7 @@ const appendTitle = str => APPEND_TITLE + str;
 const translateAppendTitle = (data, key, t) => appendTitle(translate(data, key, t));
 
 // Appended to title and og:title
-const APPEND_TITLE = 'Robo Vault | ';
+const APPEND_TITLE = 'Coconuts finance | ';
 
 // Defined here to avoid adding an entry to translation.json where not needed
 const PAGE_META = {

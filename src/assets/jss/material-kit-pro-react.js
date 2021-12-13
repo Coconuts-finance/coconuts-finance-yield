@@ -29,7 +29,8 @@ const hexToRgb = input => {
 // // // Variables - Styles that are used on more than one component
 // #############################
 
-const primaryColor = ['#000000', '#B9AEA5'];
+//const primaryColor = ['#000000', '#B9AEA5'];
+const primaryColor = ['#631f04', '#B9AEA5'];
 const hoverColor = ['#EFE6DC'];
 
 const secondaryColor = ['#FBF6F0', '#EFE6DC', '#DED9D5'];
@@ -67,6 +68,7 @@ const grayColor = [
   '#1f1f1f',
 ];
 const whiteColor = '#FFF';
+const transparentColor = 'transparent';
 const blackColor = '#000';
 const twitterColor = '#55acee';
 const facebookColor = '#3b5998';
@@ -174,6 +176,7 @@ export {
   roseColor,
   grayColor,
   whiteColor,
+  transparentColor,
   blackColor,
   twitterColor,
   facebookColor,

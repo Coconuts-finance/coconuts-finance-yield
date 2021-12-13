@@ -31,7 +31,6 @@ const networkTxUrls = {
   128: hash => `https://hecoinfo.com/tx/${hash}`,
   43114: hash => `https://cchain.explorer.avax.network/tx/${hash}/token-transfers`,
   137: hash => `https://polygonscan.com/tx/${hash}`,
-  
 };
 
 const networkFriendlyName = {
@@ -39,9 +38,9 @@ const networkFriendlyName = {
   56: 'BSC',
   128: 'HECO',
   43114: 'AVAX',
-  137: 'Polygon',
   */
-  250: 'Fantom',
+  137: 'Polygon',
+  //250: 'Fantom',
 };
 
 const networkBuyLinks = {
@@ -65,11 +64,11 @@ export const getNetworkPools = () => {
       return hecoPools;
     case '43114':
       return avalanchePools;
-    case '137':
-      return polygonPools;
-    */
     case '250':
       return fantomPools;
+    */
+    case '137':
+      return polygonPools;
     default:
       return [];
   }
@@ -84,15 +83,13 @@ export const getNetworkTokens = () => {
       return hecoAddressBook.tokens;
     case '43114':
       return avaxAddressBook.tokens;
-    case '137':
-      return polygonAddressBook.tokens;
-    */
     case '250':
       return fantomAddressBook.tokens;
+    */
+    case '137':
+      return polygonAddressBook.tokens;
     default:
-      throw new Error(
-        `Create address book for this chainId first.`
-      );
+      throw new Error(`Create address book for this chainId first.`);
   }
 };
 
@@ -108,15 +105,13 @@ export const getNetworkBurnTokens = () => {
       return {};
     case '43114':
       return {};
-    case '137':
-      return {};
-    */
     case '250':
       return {};
+    */
+    case '137':
+      return {};
     default:
-      throw new Error(
-        `Create address book for this chainId first. `
-      );
+      throw new Error(`Create address book for this chainId first. `);
   }
 };
 
@@ -129,11 +124,11 @@ export const getNetworkZaps = () => {
       return hecoZaps;
     case '43114':
       return avalancheZaps;
-    case '137':
-      return polygonZaps;
-    */
     case '250':
       return fantomZaps;
+    */
+    case '137':
+      return polygonZaps;
     default:
       return [];
   }
@@ -148,11 +143,11 @@ export const getNetworkStakePools = () => {
       return hecoStakePools;
     case '43114':
       return avalancheStakePools;
-    case '137':
-      return polygonStakePools;
-    */
     case '250':
       return fantomStakePools;
+    */
+    case '137':
+      return polygonStakePools;
     default:
       return [];
   }
@@ -182,11 +177,11 @@ export const getNetworkStables = () => {
       return ['USDT', 'HUSD'];
     case '43114':
       return ['USDT', 'DAI', 'BUSD', 'zDAI', 'zUSDT'];
-    case '137':
-      return ['USDC', 'USDT', 'maUSDC', 'DAI', 'IRON'];
-    */
     case '250':
       return ['USDC', 'USDT', 'DAI', 'fUSDT'];
+    */
+    case '137':
+      return ['USDC', 'USDT', 'maUSDC', 'DAI', 'IRON'];
     default:
       return [];
   }
@@ -201,11 +196,11 @@ export const getNetworkMulticall = () => {
       return '0x2776CF9B6E2Fa7B33A37139C3CB1ee362Ff0356e';
     case '43114':
       return '0x6FfF95AC47b586bDDEea244b3c2fe9c4B07b9F76';
-    case '137':
-      return '0xC3821F0b56FA4F4794d5d760f94B812DE261361B';
-    */
     case '250':
       return '0xC9F6b1B53E056fd04bE5a197ce4B2423d456B982';
+    */
+    case '137':
+      return '0xC3821F0b56FA4F4794d5d760f94B812DE261361B';
     default:
       return '';
   }
@@ -329,29 +324,6 @@ export const getNetworkConnectors = t => {
           },
         },
       };
-    case '137':
-      return {
-        network: 'polygon',
-        cacheProvider: true,
-        providerOptions: {
-          injected: {
-            display: {
-              name: 'Injected',
-              description: t('Home-BrowserWallet'),
-            },
-          },
-          walletconnect: {
-            package: WalletConnectProvider,
-            options: {
-              rpc: {
-                1: 'https://rpc-mainnet.maticvigil.com/',
-                137: 'https://rpc-mainnet.maticvigil.com/',
-              },
-            },
-          },
-        },
-      };
-    */
     case '250':
       return {
         network: 'fantom',
@@ -369,6 +341,29 @@ export const getNetworkConnectors = t => {
               rpc: {
                 1: 'https://rpcapi.fantom.network',
                 250: 'https://rpcapi.fantom.network',
+              },
+            },
+          },
+        },
+      };
+    */
+    case '137':
+      return {
+        network: 'polygon',
+        cacheProvider: true,
+        providerOptions: {
+          injected: {
+            display: {
+              name: 'Injected',
+              description: t('Home-BrowserWallet'),
+            },
+          },
+          walletconnect: {
+            package: WalletConnectProvider,
+            options: {
+              rpc: {
+                1: 'https://rpc-mainnet.maticvigil.com/',
+                137: 'https://rpc-mainnet.maticvigil.com/',
               },
             },
           },

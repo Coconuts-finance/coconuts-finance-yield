@@ -5,7 +5,15 @@ const createTheme = isNightMode =>
     palette: {
       type: isNightMode ? 'dark' : 'light',
       background: {
-        default: isNightMode ? '#2042b3' : '#fff',
+        //default: isNightMode ? '#2042b3' : '#fff',
+        default: isNightMode ? '#631f04' : '#fff',
+        transparent: isNightMode ? 'transparent' : 'transparent',
+        color1: isNightMode ? '#020024' : '#e5fbff',
+        color2: isNightMode ? '#090979' : '#79e9ff',
+        color3: isNightMode ? '#beae5c' : '#e0cf9b',
+        sand: isNightMode ? '#7e633a' : '#fff3d0',
+        header: isNightMode ? '#324687' : '#b1f8ff',
+        footer: isNightMode ? '#7e633a' : '#fff3d0',
         paper: isNightMode ? '#445db3' : '#fff',
         primary: isNightMode ? '#445db3' : '#fff',
         secondary: isNightMode ? '#445db3' : '#fff',
@@ -24,15 +32,15 @@ const createTheme = isNightMode =>
         main: isNightMode ? '#fff' : '#F8F2EC',
       },
       text: {
-        primary: isNightMode ? '#fff' : '#2042b3',
-        secondary: isNightMode ? '#B0B0DD' : '#445db3',
+        primary: isNightMode ? '#fff' : '#631f04',
+        secondary: isNightMode ? '#fff3b7' : '#7c2706',
         announce: isNightMode ? '#fff' : '#fff',
       },
     },
     overrides: {
       MuiButton: {
         label: {
-          color: isNightMode ? '#fff' : '#000',
+          color: isNightMode ? '#fff' : '#631f04',
         },
       },
       // for dropdown menu items

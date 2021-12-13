@@ -159,6 +159,9 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         .times(sliderInt)
         .div(100)
         .decimalPlaces(pool.earnedTokenDecimals, BigNumber.ROUND_DOWN);
+      if (amount == 0) {
+        amount = new BigNumber(0);
+      }
       input = amount.decimalPlaces(8, BigNumber.ROUND_DOWN).toFormat();
     }
     if (sliderInt >= 99) {

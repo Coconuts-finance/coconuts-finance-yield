@@ -2,17 +2,19 @@ const styles = theme => ({
   details: {
     display: 'flex',
     alignItems: 'center',
-    background: theme.palette.background.primary,
+    borderRadius: '5px',
   },
   detailsPaused: {
     display: 'flex',
     alignItems: 'center',
     background: theme.palette.background.paused,
+    borderRadius: '5px',
   },
   detailsRetired: {
     display: 'flex',
     alignItems: 'center',
     background: theme.palette.background.retired,
+    borderRadius: '5px',
   },
   mobilePadding: {
     paddingTop: '20px',

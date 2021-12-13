@@ -1,11 +1,14 @@
+import { hexToRgb } from 'assets/jss/material-kit-pro-react';
+
 const styles = theme => ({
   container: {
     padding: '24px',
     margin: '8px 0 2rem',
     border: '1px solid ' + theme.palette.background.border,
-    backgroundColor: theme.palette.background.primary,
+    backgroundColor: 'rgba(' + hexToRgb(theme.palette.background.sand) + ', 0.9)',
     justifyContent: 'space-between',
     position: 'relative',
+    borderRadius: '5px',
   },
 
   selectorContainer: {
