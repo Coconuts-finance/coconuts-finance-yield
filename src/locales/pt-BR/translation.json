@@ -96,5 +96,6 @@
   "Buy-Token": "Contrato",
   "Boost": "Incentivo",
   "Experimental": "Experimental",
-  "Select-Network": "Selecionar rede"
+  "Select-Network": "Selecionar rede",
+  "Deposit-Earn": "Deposite {{depositToken}}, ganhe {{earnToken}}"
 }

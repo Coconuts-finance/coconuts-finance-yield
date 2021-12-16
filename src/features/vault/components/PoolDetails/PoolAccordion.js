@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
-import { Link } from 'react-router-dom';
+import { Grid } from '@material-ui/core';
 
 function TabContainer(props) {
   return <Typography component="div">{props.children}</Typography>;
@@ -56,14 +56,22 @@ const PoolAccordion = ({ pool, balanceSingle, index, sharesBalance }) => {
           )}
           {tabIndex === 1 && (
             <TabContainer>
-              <Button
-                xs={5}
-                md={2}
-                className={classes.stakeBtn}
-                href={`/stake/pool/${pool.useStake}`}
-              >
-                t('Stake-Button-Claim')
-              </Button>
+              <Grid container alignItems="center" style={{ padding: '30px' }}>
+                <Grid item xs={12} sm={8}>
+                  If you have deposited USDC and get ACUSDC back, you can now stake it to earn
+                  rewards.
+                </Grid>
+                <Grid item xs={12} sm={4} style={{ textAlign: 'center' }}>
+                  <Button
+                    xs={5}
+                    md={2}
+                    className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+                    href={`/stake/pool/${pool.useStake}`}
+                  >
+                    {t('Stake-Button-Stake-Tokens')}
+                  </Button>
+                </Grid>
+              </Grid>
             </TabContainer>
           )}
         </AccordionDetails>

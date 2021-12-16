@@ -64,7 +64,7 @@ export const polygonStakePools = [
         website: 'https://app.beefy.finance',
         social: {
           telegram: 'https://t.me/coconutsfinance',
-          twitter: 'https://twitter.com/robo-vault',
+          twitter: 'https://twitter.com/CoconutsFinance',
         },
       },
     ],

@@ -25,7 +25,7 @@ const PoolSummary = ({
   fetchBalancesDone,
   fetchApysDone,
   fetchVaultsDataDone,
-  address
+  address,
 }) => {
   const { t } = useTranslation();
   const classes = useStyles();
@@ -56,18 +56,20 @@ const PoolSummary = ({
       />
     );
   }, [pool, launchpool, t]);
-  
-  apy.maxApy = pool.maxApy
-  apy.apy24hrs = pool.apy24hrs
-  const balanceUsd = balanceSingle > 0 && fetchVaultsDataDone ? formatTvl(balanceSingle, pool.oraclePrice) : '';
+
+  apy.maxApy = pool.maxApy;
+  apy.apy24hrs = pool.apy24hrs;
+  const balanceUsd =
+    balanceSingle > 0 && fetchVaultsDataDone ? formatTvl(balanceSingle, pool.oraclePrice) : '';
   const deposited = byDecimals(
     sharesBalance.multipliedBy(new BigNumber(pool.pricePerFullShare)),
     pool.earnedTokenDecimals
   );
-  const depositedUsd = deposited > 0 && fetchVaultsDataDone ? formatTvl(deposited, pool.oraclePrice) : '';
-  // const balanceReservesUsd = deposited > 0 && fetchVaultsDataDone ? formatTvl(pool.balanceReserves, pool.oraclePrice) : '';  
-  const depositLimitUsd = fetchVaultsDataDone ? formatTvl(pool.depositLimit, pool.oraclePrice) : '';  
-  console.log(pool.depositLimit)
+  const depositedUsd =
+    deposited > 0 && fetchVaultsDataDone ? formatTvl(deposited, pool.oraclePrice) : '';
+  // const balanceReservesUsd = deposited > 0 && fetchVaultsDataDone ? formatTvl(pool.balanceReserves, pool.oraclePrice) : '';
+  const depositLimitUsd = fetchVaultsDataDone ? formatTvl(pool.depositLimit, pool.oraclePrice) : '';
+  //console.log(pool.depositLimit)
   const onSummaryClick = useCallback(
     e => {
       if (!e.target || !e.target.classList.contains('tooltip-toggle')) {
@@ -89,7 +91,7 @@ const PoolSummary = ({
       style={{ justifyContent: 'space-between' }}
       onClick={onSummaryClick}
     >
-      <Grid container alignItems="center" style={{ paddingTop: '20px' }}>
+      <Grid container alignItems="center" style={{ marginTop: '-40px' }}>
         {vaultStateTitle}
         <Grid item xs={12} className={`${classes.item} ${classes.itemTitle}`}>
           <PoolTitle
@@ -139,14 +141,14 @@ const PoolSummary = ({
             // tooltip={t('Vault-ReservesTooltip')}
           />
         </Grid>
-          <ApyStats
-            apy={apy}
-            launchpoolApr={launchpool && launchpool.apy ? launchpool.apy : null}
-            isLoading={!fetchApysDone}
-            itemClasses={`${classes.item} ${classes.itemStats}`}
-            itemInnerClasses={classes.itemInner}
-            status={pool.status}
-          />
+        <ApyStats
+          apy={apy}
+          launchpoolApr={launchpool && launchpool.apy ? launchpool.apy : null}
+          isLoading={!fetchApysDone}
+          itemClasses={`${classes.item} ${classes.itemStats}`}
+          itemInnerClasses={classes.itemInner}
+          status={pool.status}
+        />
         <Grid item xs={6} className={`${classes.item} ${classes.itemStats}`}>
           <LabeledStat
             value={formatTvl(pool.tvl, pool.oraclePrice)}
@@ -165,13 +167,13 @@ const formatDecimals = number => {
 };
 
 const toHolderAnalyticsUrl = (address, id) => {
-  const url = `http://analytics.robo-vault.com/d/-b1gQ0G7k/holder-balance?orgId=1&var-vault=${id}&var-address=${address.toLowerCase()}`
-  return url
-}
+  const url = `http://analytics.robo-vault.com/d/-b1gQ0G7k/holder-balance?orgId=1&var-vault=${id}&var-address=${address.toLowerCase()}`;
+  return url;
+};
 
 const toTokenAnalyticsUrl = (address, id) => {
-  const url = `http://analytics.robo-vault.com/d/3J6qoit7k/vaults-dash-v3?orgId=1&var-vault=${id}`
-  return url
-}
+  const url = `http://analytics.robo-vault.com/d/3J6qoit7k/vaults-dash-v3?orgId=1&var-vault=${id}`;
+  return url;
+};
 
 export default PoolSummary;

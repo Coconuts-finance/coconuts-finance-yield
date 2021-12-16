@@ -9,6 +9,9 @@ const styles = theme => ({
       height: '60px',
     },
   },
+  filters: {
+    backgroundColor: 'rgba(' + hexToRgb(theme.palette.background.sand) + ', 0.9)',
+  },
   item: {
     position: 'relative',
     textAlign: 'center',

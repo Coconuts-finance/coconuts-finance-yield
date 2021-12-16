@@ -101,7 +101,12 @@ export default function StakePools(props) {
         </div>
       </Grid>
       <Grid item xs={12} style={{ paddingBottom: '20px', textAlign: 'right' }}>
-        <ToggleButtonGroup value={showPools} exclusive onChange={handleShowPools}>
+        <ToggleButtonGroup
+          className={classes.filters}
+          value={showPools}
+          exclusive
+          onChange={handleShowPools}
+        >
           <ToggleButton value="all">All</ToggleButton>
           <ToggleButton value="active">Live</ToggleButton>
           <ToggleButton value="closed">Finished</ToggleButton>
