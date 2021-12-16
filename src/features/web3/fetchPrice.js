@@ -35,8 +35,29 @@ const fetchTokens = async () => {
   const cacheBuster = getApiCacheBuster();
 
   try {
+    const tokens = {
+      weth: 'WETH',
+      wmatic: 'WMATIC',
+      'wrapped-bitcoin': 'WBTC',
+      'usd-coin': 'USDC',
+      tether: 'USDT',
+      dai: 'DAI',
+      'klima-dao': 'KLIMA',
+    };
+    const keys = Object.keys(tokens);
+    const a = keys.join(',');
+    const response = await axios.get(
+      `https://api.coingecko.com/api/v3/simple/price?ids=` + a + `&vs_currencies=usd`
+    );
+
+    const prices = Object.fromEntries(
+      Object.entries(response.data).map(([key, value]) => [tokens[key], value.usd])
+    );
+    return prices;
+    /*
     const response = await axios.get(`https://api.beefy.finance/prices?_=${cacheBuster}`);
     return response.data;
+    */
   } catch (err) {
     console.error(err);
     return {};

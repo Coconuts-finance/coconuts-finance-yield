@@ -1,6 +1,40 @@
-import { govPoolABI } from '../abi';
+import { govPoolABI, klimaPoolABI } from '../abi';
 
 export const polygonStakePools = [
+  {
+    id: 'klima-polygon',
+    name: 'KLIMA',
+    logo: 'single-assets/KLIMA.png',
+    token: 'ACUSDC',
+    tokenDecimals: 6,
+    tokenAddress: '0xB65f32408EbE463248396933CcCe846C06C7a9fC',
+    tokenOracle: 'tokens',
+    tokenOracleId: 'USDC',
+    earnedToken: 'KLIMA',
+    earnedTokenDecimals: 9,
+    earnedTokenAddress: '0x4e78011Ce80ee02d2c3e649Fb657E45898257815',
+    earnContractAddress: '0xa1409f29361b600561582c7b337aa22e47f1c88e',
+    earnContractAbi: klimaPoolABI,
+    earnContractAbiName: 'klimaPoolABI',
+    earnedOracle: 'tokens',
+    earnedOracleId: 'KLIMA',
+    partnership: false,
+    status: 'active',
+    hideCountdown: true,
+    partners: [
+      {
+        logo: 'stake/beefy/beefyfinance.png',
+        background: 'stake/beefy/background.png',
+        text: "You probably already knew that Beefy is the most trusted multi-chain yield optimizer. But did you know that Beefy has its own token? $BIFI has a maximum supply of 80000 tokens and there is no way to mint more. Everyone who holds our own $BIFI token can not only do cool stuff like create and vote on proposals, they also get a share of all harvests done, every hour, every day on all our Polygon vaults. That's a lot of Matic that goes straight to our $BIFI holders. All you have to do is stake your $BIFI in this vault, it’s that simple, come back and harvest your Matic whenever you need it!",
+        website: 'https://app.beefy.finance',
+        social: {
+          telegram: 'https://t.me/coconutsfinance',
+          twitter: 'https://twitter.com/robo-vault',
+        },
+      },
+    ],
+  },
+  /*
   {
     id: 'bifi-polygon',
     name: 'BIFI',
@@ -15,6 +49,7 @@ export const polygonStakePools = [
     earnedTokenAddress: '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
     earnContractAddress: '0xDeB0a777ba6f59C78c654B8c92F80238c8002DD2',
     earnContractAbi: govPoolABI,
+    earnContractAbiName: 'govPoolABI',
     earnedOracle: 'tokens',
     earnedOracleId: 'WMATIC',
     partnership: false,
@@ -33,6 +68,8 @@ export const polygonStakePools = [
       },
     ],
   },
+  */
+  /*
   {
     id: 'moo_aave-eth',
     name: 'Iron / Garuda / Fanatics',
@@ -145,4 +182,5 @@ export const polygonStakePools = [
       },
     ],
   },
+  */
 ];

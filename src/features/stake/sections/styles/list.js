@@ -1,3 +1,4 @@
+import { hexToRgb } from 'assets/jss/material-kit-pro-react';
 import { primaryColor } from 'assets/jss/material-kit-pro-react';
 
 const styles = theme => ({
@@ -15,7 +16,7 @@ const styles = theme => ({
     marginBottom: '24px',
     border: '1px solid ' + theme.palette.background.border,
     borderRadius: '8px',
-    backgroundColor: theme.palette.background.primary,
+    backgroundColor: 'rgba(' + hexToRgb(theme.palette.background.sand) + ', 0.9)',
     '& .MuiAvatar-root': {
       width: theme.spacing(7),
       height: theme.spacing(7),
@@ -106,6 +107,7 @@ const styles = theme => ({
     marginTop: '30px',
     '& .MuiPaper-root': {
       background: 'none',
+      backgroundColor: 'rgba(' + hexToRgb(theme.palette.background.sand) + ', 0.9)',
     },
     '& .MuiAccordion-root': {
       border: '1px solid ' + theme.palette.background.border,
@@ -113,7 +115,7 @@ const styles = theme => ({
       marginBottom: '4px',
     },
     '& .MuiAccordion-root .MuiAccordionSummary-root': {
-      background: theme.palette.background.secondary,
+      backgroundColor: 'rgba(' + hexToRgb(theme.palette.background.sand) + ', 0.9)',
     },
     '& .MuiAccordionSummary-root .MuiTypography-root': {
       fontWeight: 'bold',

@@ -26,34 +26,61 @@ export function fetchHalfTime(index) {
       const { home, stake } = getState();
       let { address, web3 } = home;
       const { pools } = stake;
-      const { earnContractAbi, earnContractAddress } = pools[index];
+      const { earnContractAbi, earnContractAbiName, earnContractAddress, earnedTokenAddress } =
+        pools[index];
 
       if (!web3) {
         web3 = new Web3(new Web3.providers.HttpProvider(getRpcUrl()));
       }
 
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      contract.methods
-        .periodFinish()
-        .call({ from: address })
-        .then(data => {
-          dispatch({
-            type: STAKE_FETCH_HALF_TIME_SUCCESS,
-            data,
-            index,
-          });
-          resolve(data);
-        })
-        .catch(
-          // Use rejectHandler as the second argument so that render errors won't be caught.
-          error => {
-            dispatch({
-              type: STAKE_FETCH_HALF_TIME_FAILURE,
-              index,
+      switch (earnContractAbiName) {
+        case 'klimaPoolABI':
+          contract.methods
+            .rewardData(earnedTokenAddress)
+            .call({ from: address })
+            .then(data => {
+              dispatch({
+                type: STAKE_FETCH_HALF_TIME_SUCCESS,
+                data: data.periodFinish,
+                index,
+              });
+              resolve(data);
+            })
+            .catch(error => {
+              dispatch({
+                type: STAKE_FETCH_HALF_TIME_FAILURE,
+                index,
+              });
+              reject(error.message || error);
             });
-            reject(error.message || error);
-          }
-        );
+          break;
+
+        case 'govPoolABI':
+        default:
+          contract.methods
+            .periodFinish()
+            .call({ from: address })
+            .then(data => {
+              dispatch({
+                type: STAKE_FETCH_HALF_TIME_SUCCESS,
+                data,
+                index,
+              });
+              resolve(data);
+            })
+            .catch(
+              // Use rejectHandler as the second argument so that render errors won't be caught.
+              error => {
+                dispatch({
+                  type: STAKE_FETCH_HALF_TIME_FAILURE,
+                  index,
+                });
+                reject(error.message || error);
+              }
+            );
+          break;
+      }
     });
     return promise;
   };
