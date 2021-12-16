@@ -29,8 +29,8 @@ export const polygonStakePools = [
         Through the KLIMA token, we will maximize value creation for our community and create a virtuous cycle of growth. Eventually, the KLIMA token (each backed by real, verified carbon assets) will function as a truly sustainable asset and medium-of-exchange, with real planetary value.`,
         website: 'https://dapp.klimadao.finance',
         social: {
-          telegram: 'https://t.me/coconutsfinance',
-          twitter: 'https://twitter.com/CoconutsFinance',
+          telegram: 'https://t.me/KlimadaoEN',
+          twitter: 'https://twitter.com/KlimaDAO',
         },
       },
     ],
