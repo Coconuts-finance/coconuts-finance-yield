@@ -174,7 +174,8 @@ export default function StakePools(props) {
           </React.Fragment>
         ))}
       </Grid>
-      <Grid container spacing={4} justify={'center'}>
+
+      {/*<Grid container spacing={4} justify={'center'}>
         <Grid className={classes.faq} item xs={12} lg={9}>
           <Accordion square expanded={expanded === 'faq-1'} onChange={handleChange('faq-1')}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -385,7 +386,7 @@ export default function StakePools(props) {
         <Grid item xs={12}>
           <Disclaimer />
         </Grid>
-      </Grid>
+      </Grid>*/}
     </Grid>
   );
 }
