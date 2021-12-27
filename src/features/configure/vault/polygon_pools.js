@@ -188,7 +188,7 @@ export const polygonPools = [
     depositsPaused: false,
     status: 'active',
     platform: 'yVaultV2',
-    assets: ['USDC', 'ACUSDC'],
+    assets: ['USDC'],
     callFee: 0,
     withdrawalFee: '0.0',
     useStake: 'klima-polygon',
