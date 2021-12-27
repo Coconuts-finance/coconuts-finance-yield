@@ -294,7 +294,8 @@ export default function StakePool(props) {
         <Grid item xs={6} sm={6} md={3}>
           <Typography className={classes.title}>{`${
             Math.floor(myBalance.toNumber() * 10000) / 10000
-          } ${
+          }`}</Typography>
+          <Typography className={classes.title}>{`${
             pools[index].token === 'mooAutoWbnbFixed' ? 'mooAutoWBNB' : pools[index].token
           }`}</Typography>
           <Typography className={classes.subtitle}>{t('Stake-Balancer-Your-Balance')}</Typography>
@@ -302,7 +303,8 @@ export default function StakePool(props) {
         <Grid item xs={6} sm={6} md={3}>
           <Typography className={classes.title}>{`${
             Math.floor(myCurrentlyStaked.toNumber() * 10000) / 10000
-          } ${
+          }`}</Typography>
+          <Typography className={classes.title}>{`${
             pools[index].token === 'mooAutoWbnbFixed' ? 'mooAutoWBNB' : pools[index].token
           }`}</Typography>
           <Typography className={classes.subtitle}>{t('Stake-Balancer-Current-Staked')}</Typography>
@@ -311,9 +313,15 @@ export default function StakePool(props) {
           <Box display="flex" justifyContent={'center'}>
             <Typography className={classes.title}>{`${
               Math.floor(myRewardsAvailable.toNumber() * 10000) / 10000
-            } ${pools[index].earnedToken}`}</Typography>
-            <Avatar className={classes.fire} src={require('images/stake/fire.png')} />
+            }`}</Typography>
           </Box>
+          <Box display="flex" justifyContent={'center'}>
+            <Typography className={classes.title}>{`
+              ${pools[index].earnedToken}
+            `}</Typography>
+            {/*<Avatar className={classes.fire} src={require('images/stake/fire.png')} />*/}
+          </Box>
+
           <Typography className={classes.subtitle}>
             {t('Stake-Balancer-Rewards-Available')}
           </Typography>

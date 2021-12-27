@@ -57,7 +57,22 @@ export function fetchByIndex(index) {
       const getYearlyRewardsInUsd = async pool => {
         const tokenPrice = fetchPrice({ id: pool.earnedOracleId });
         const rewardPool = new web3.eth.Contract(pool.earnContractAbi, pool.earnContractAddress);
-        const rewardRate = new BigNumber(await rewardPool.methods.rewardRate().call());
+
+        let rewardRate = new BigNumber(0);
+
+        // Get information switch ABI
+        switch (pool.earnContractAbiName) {
+          case 'klimaPoolABI':
+            const rewardData = await rewardPool.methods.rewardData(pool.earnedTokenAddress).call();
+            rewardRate = new BigNumber(rewardData.rewardRate);
+            break;
+
+          case 'govPoolABI':
+          default:
+            rewardRate = new BigNumber(await rewardPool.methods.rewardRate().call());
+            break;
+        }
+
         const yearlyRewards = rewardRate.times(3600).times(24).times(365);
 
         return yearlyRewards

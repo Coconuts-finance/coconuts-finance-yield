@@ -77,5 +77,6 @@
   "Wrap-BNB": "Wrap BNB",
   "Boost": "Boost",
   "Experimental": "Experimentell",
-  "Select-Network": "Netzwerk auswählen"
+  "Select-Network": "Netzwerk auswählen",
+  "Deposit-Earn": "{{depositToken}} einzahlen, {{earnToken}} verdienen"
 }

@@ -56,6 +56,8 @@ const PoolTitle = ({
   const { t } = useTranslation();
 
   let avatar;
+  let single = assets.length == 1;
+
   if (logo) {
     avatar = (
       <Avatar
@@ -101,10 +103,12 @@ const PoolTitle = ({
               leaveTouchDelay={3000}
               classes={{ tooltip: classes.tooltip }}
             >
-            <span className={classes.subtitle} variant="body2">{' ⚠️ (Low Liquidity)'}</span>
+              <span className={classes.subtitle} variant="body2">
+                {' ⚠️ (Low Liquidity)'}
+              </span>
             </Tooltip>
           ) : (
-            ''            
+            ''
           )}
           {collateralCap ? (
             <Tooltip
@@ -116,11 +120,18 @@ const PoolTitle = ({
               leaveTouchDelay={3000}
               classes={{ tooltip: classes.tooltip }}
             >
-            <span className={classes.subtitle} variant="body2">{' ⚠️ (Collateral Capped)'}</span>
+              <span className={classes.subtitle} variant="body2">
+                {' ⚠️ (Collateral Capped)'}
+              </span>
             </Tooltip>
           ) : (
-            ''            
+            ''
           )}
+        </Typography>
+        <Typography className={classes.subtitle} variant="body2">
+          {single
+            ? t('Deposit-Earn', { depositToken: assets[0], earnToken: assets[0] })
+            : t('Deposit-Earn', { depositToken: assets[0], earnToken: assets[1] })}
         </Typography>
         <Typography className={classes.subtitle} variant="body2">
           {description}
@@ -135,7 +146,12 @@ const PoolTitle = ({
             ''
           )}
           {buyTokenAnalyticsUrl ? (
-            <a className={classes.url} href={buyTokenAnalyticsUrl} target="_blank" rel="noopener noreferrer">
+            <a
+              className={classes.url}
+              href={buyTokenAnalyticsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span>{'📈'}</span>
               {'\u00A0\u00A0'}
             </a>
