@@ -25,29 +25,59 @@ export function fetchRewardsAvailable(index) {
       const { home, stake } = getState();
       const { address, web3 } = home;
       const { pools } = stake;
-      const { earnContractAbi, earnContractAddress } = pools[index];
+      const { earnContractAbi, earnContractAbiName, earnContractAddress, earnedTokenAddress } =
+        pools[index];
       const contract = new web3.eth.Contract(earnContractAbi, earnContractAddress);
-      contract.methods
-        .earned(address)
-        .call({ from: address })
-        .then(data => {
-          dispatch({
-            type: STAKE_FETCH_REWARDS_AVAILABLE_SUCCESS,
-            data: new BigNumber(data).toNumber(),
-            index,
-          });
-          resolve(data);
-        })
-        .catch(
-          // Use rejectHandler as the second argument so that render errors won't be caught.
-          error => {
-            dispatch({
-              type: STAKE_FETCH_REWARDS_AVAILABLE_FAILURE,
-              index,
-            });
-            reject(error.message || error);
-          }
-        );
+
+      switch (earnContractAbiName) {
+        case 'klimaPoolABI':
+          contract.methods
+            .earned(address, earnedTokenAddress)
+            .call({ from: address })
+            .then(data => {
+              dispatch({
+                type: STAKE_FETCH_REWARDS_AVAILABLE_SUCCESS,
+                data: new BigNumber(data).toNumber(),
+                index,
+              });
+              resolve(data);
+            })
+            .catch(
+              // Use rejectHandler as the second argument so that render errors won't be caught.
+              error => {
+                dispatch({
+                  type: STAKE_FETCH_REWARDS_AVAILABLE_FAILURE,
+                  index,
+                });
+                reject(error.message || error);
+              }
+            );
+          break;
+        case 'govPoolABI':
+        default:
+          contract.methods
+            .earned(address)
+            .call({ from: address })
+            .then(data => {
+              dispatch({
+                type: STAKE_FETCH_REWARDS_AVAILABLE_SUCCESS,
+                data: new BigNumber(data).toNumber(),
+                index,
+              });
+              resolve(data);
+            })
+            .catch(
+              // Use rejectHandler as the second argument so that render errors won't be caught.
+              error => {
+                dispatch({
+                  type: STAKE_FETCH_REWARDS_AVAILABLE_FAILURE,
+                  index,
+                });
+                reject(error.message || error);
+              }
+            );
+          break;
+      }
     });
     return promise;
   };

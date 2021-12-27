@@ -92,6 +92,32 @@ const styles = theme => ({
   itemInner: {
     textAlign: 'center',
   },
+  showDetailButton: {
+    margin: '12px 5px',
+    fontSize: '14px',
+    fontWeight: 'bold',
+    borderRadius: '5px',
+    width: '160px',
+  },
+  showDetailButtonOutlined: {
+    backgroundColor: 'transparent',
+    border: `1px solid ${theme.palette.primary.main}`,
+    color: primaryColor[0],
+    '&:hover': {
+      '& .MuiButton-label': {
+        color: 'white',
+      },
+    },
+    '& .MuiTouchRipple-root span': {
+      backgroundColor: primaryColor[0],
+    },
+  },
+  showDetailButtonContained: {
+    backgroundColor: primaryColor[0],
+    '& .MuiButton-label': {
+      color: 'white',
+    },
+  },
 });
 
 export default styles;

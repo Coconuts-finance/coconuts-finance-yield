@@ -217,6 +217,9 @@ const styles = theme => ({
     overflow: 'visible',
   },
   logo: {
+    position: 'absolute',
+    top: '-30px',
+    left: '0px',
     marginRight: '12px',
   },
   middleNav: {

@@ -87,5 +87,6 @@
   "Coming-Soon": "Prossimamente",
   "Finished": "Terminato",
   "End": "Fine",
-  "Select-Network": "Seleziona rete"
+  "Select-Network": "Seleziona rete",
+  "Deposit-Earn": "Deposita {{depositToken}}, guadagna {{earnToken}}"
 }

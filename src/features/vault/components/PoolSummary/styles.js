@@ -23,7 +23,7 @@ const styles = theme => ({
     },
   },
   item: {
-    marginBottom: '20px',
+    marginTop: '40px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

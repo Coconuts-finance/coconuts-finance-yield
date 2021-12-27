@@ -41,7 +41,7 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             <img
               alt="Coconuts finance"
               src={require(`assets/img/cnc-logo.svg`)}
-              height={'160px'}
+              height={'100px'}
               className={classes.logo}
             />
           </Hidden>

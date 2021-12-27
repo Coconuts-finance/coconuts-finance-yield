@@ -32,7 +32,7 @@ const createTheme = isNightMode =>
         main: isNightMode ? '#fff' : '#F8F2EC',
       },
       text: {
-        primary: isNightMode ? '#fff' : '#631f04',
+        primary: isNightMode ? '#fff3b7' : '#631f04',
         secondary: isNightMode ? '#fff3b7' : '#7c2706',
         announce: isNightMode ? '#fff' : '#fff',
       },
@@ -46,7 +46,7 @@ const createTheme = isNightMode =>
       // for dropdown menu items
       MuiButtonBase: {
         root: {
-          color: isNightMode ? '#445db3' : '#000',
+          color: isNightMode ? '#fff3b7' : '#631f04',
         },
       },
       MuiCheckbox: {

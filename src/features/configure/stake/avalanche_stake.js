@@ -28,7 +28,7 @@ export const avalancheStakePools = [
         website: 'https://app.coconuts.finance',
         social: {
           telegram: 'https://t.me/coconutsfinance',
-          twitter: 'https://twitter.com/robo-vault',
+          twitter: 'https://twitter.com/CoconutsFinance',
         },
       },
     ],

@@ -25,7 +25,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://medium.com/@RoboVault"
+          href="https://medium.com/@coconuts.finance"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -35,7 +35,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://github.com/chimera-defi/robo-vault-app"
+          href="https://github.com/chimera-defi/coconuts-finance-yield"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -45,7 +45,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="http://analytics.robo-vault.com/"
+          href="http://analytics.coconuts.finance/"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -58,7 +58,7 @@ const Footer = () => {
       <div className={classes.column}>
         <div className={classes.title}>{t('Socials')}</div>
         <a
-          href="https://twitter.com/robo_vault"
+          href="https://twitter.com/CoconutsFinance"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -69,7 +69,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://discord.gg/5FwsPJWjSK"
+          href="https://discord.gg/EtPMckn9"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}

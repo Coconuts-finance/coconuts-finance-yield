@@ -111,5 +111,6 @@
   "Wrap-BNB": "Wrap BNB",
   "Boost": "Boost",
   "Experimental": "Expérimental",
-  "Select-Network": "Sélecteur de Réseaux"
+  "Select-Network": "Sélecteur de Réseaux",
+  "Deposit-Earn": "Déposez des {{depositToken}}, gagnez des {{earnToken}}"
 }
