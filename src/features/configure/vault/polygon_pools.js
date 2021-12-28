@@ -24,8 +24,7 @@ export const polygonPools = [
     callFee: 0,
     withdrawalFee: '0.0',
     useStake: 0,
-    buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
+    buyTokenUrl: 'https://polygonscan.com/address/0x38E7f441d479dE60b6f8C9F15EbB8c7F7A7fDDC1',
   },
   {
     id: 'polygon-cnc-weth',
@@ -52,8 +51,7 @@ export const polygonPools = [
     callFee: 0,
     withdrawalFee: '0.0',
     useStake: 0,
-    buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
+    buyTokenUrl: 'https://polygonscan.com/address/0x42c526eB3A6Dbd8b651DE4c8711C5faD71913678',
   },
   {
     id: 'polygon-cnc-wbtc',
@@ -80,8 +78,7 @@ export const polygonPools = [
     callFee: 0,
     withdrawalFee: '0.0',
     useStake: 0,
-    buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
+    buyTokenUrl: 'https://polygonscan.com/address/0xA5A12d8E381A753f2B4E9Ffe88e64E043377eB8e',
   },
   {
     id: 'polygon-cnc-usdt',
@@ -108,8 +105,7 @@ export const polygonPools = [
     callFee: 0,
     withdrawalFee: '0.0',
     useStake: 0,
-    buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
+    buyTokenUrl: 'https://polygonscan.com/address/0xa677c8b5C48ec608DD83381DEcf270B40f93e105',
   },
   {
     id: 'polygon-cnc-dai',
@@ -136,8 +132,7 @@ export const polygonPools = [
     callFee: 0,
     withdrawalFee: '0.0',
     useStake: 0,
-    buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
+    buyTokenUrl: 'https://polygonscan.com/address/0x693c49F004B4dC8F180245b718c019947edd0f7b',
   },
   {
     id: 'polygon-cnc-usdc',
@@ -164,8 +159,7 @@ export const polygonPools = [
     callFee: 0,
     withdrawalFee: '0.0',
     useStake: 0,
-    buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
+    buyTokenUrl: 'https://polygonscan.com/address/0x31085Ae55D34E5dbE9e00e63cA26a3E389536F97',
   },
   {
     id: 'polygon-cnc-usdc-yield-redirector',
@@ -192,8 +186,7 @@ export const polygonPools = [
     callFee: 0,
     withdrawalFee: '0.0',
     useStake: 'klima-polygon',
-    buyTokenUrl:
-      'https://quickswap.exchange/#/swap?inputCurrency=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619&outputCurrency=0xfbdd194376de19a88118e84e279b977f165d01b8',
+    buyTokenUrl: 'https://polygonscan.com/address/0xB65f32408EbE463248396933CcCe846C06C7a9fC',
   },
 
   /*
