@@ -1,14 +1,14 @@
 import React, { forwardRef, memo } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { Fade, Tooltip } from '@material-ui/core';
+//import { Fade, Tooltip } from '@material-ui/core';
 
 import ValueLoader from '../ValueLoader/ValueLoader';
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-const LabeledStatWithTooltip = memo(({ tooltip, label, ...passthrough }) => {
+/*const LabeledStatWithTooltip = memo(({ tooltip, label, ...passthrough }) => {
   const classes = useStyles();
 
   return tooltip ? (
@@ -34,11 +34,11 @@ const LabeledStatWithTooltip = memo(({ tooltip, label, ...passthrough }) => {
     <LabeledStat label={label} {...passthrough} />
   );
 });
-
+*/
 const LabeledStat = forwardRef(
   ({ value, label, boosted, isLoading = false, subvalue, ...passthrough }, ref) => {
     const classes = useStyles();
-    const tooltip = 'hello' 
+    //const tooltip = 'hello'
     return (
       <div {...passthrough} ref={ref}>
         <Typography className={classes.stat} variant="body2" gutterBottom>

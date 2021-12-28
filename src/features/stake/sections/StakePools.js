@@ -7,14 +7,14 @@ import {
   Avatar,
   makeStyles,
   Box,
-  Accordion,
-  AccordionDetails,
+  //Accordion,
+  //AccordionDetails,
 } from '@material-ui/core';
-import Disclaimer from 'components/Disclaimer/Disclaimer';
+//import Disclaimer from 'components/Disclaimer/Disclaimer';
 import Button from 'components/CustomButtons/Button';
 import styles from './styles/list';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+//import AccordionSummary from '@material-ui/core/AccordionSummary';
+//import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { formatCountdown } from 'features/helpers/format';
 import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
@@ -25,7 +25,7 @@ export default function StakePools(props) {
   const classes = useStyles();
   const { t } = useTranslation();
   const { pools } = useFetchPoolData();
-  const { networkId, address } = useConnectWallet();
+  const { /*networkId,*/ address } = useConnectWallet();
   const { halfTime, fetchHalfTime } = useFetchHalfTime();
   const [time, setTime] = React.useState(new Date());
 
@@ -46,11 +46,12 @@ export default function StakePools(props) {
     return () => clearInterval(id);
   }, [address, halfTime, fetchHalfTime, pools]);
 
+  /*
   const [expanded, setExpanded] = React.useState('faq-1');
 
   const handleChange = panel => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
-  };
+  };*/
 
   useEffect(() => {
     const fetchCountdown = () => {

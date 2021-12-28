@@ -147,7 +147,7 @@ const DepositSection = ({ pool }) => {
     if (sliderInt > 0 && sliderInt < 100) {
       amount = total.times(sliderInt).div(100).decimalPlaces(8);
     }
-    if (sliderInt == 100) {
+    if (sliderInt === 100) {
       amount = total;
     }
     const allowance = new BigNumber(
@@ -226,7 +226,7 @@ const DepositSection = ({ pool }) => {
       return;
     }
 
-    console.log('IS ZAP DEPOSIT?! ' + deposit.isZap)
+    console.log('IS ZAP DEPOSIT?! ' + deposit.isZap);
     if (deposit.isZap) {
       // Zap deposit
       const swapAmountOut = pool.zapEstimate.swapAmountOut;
@@ -258,7 +258,7 @@ const DepositSection = ({ pool }) => {
         amount: convertAmountToRawNumber(deposit.amount, deposit.token.decimals),
         contractAddress: deposit.vaultAddress,
       };
-      console.log(depositArgs)
+      console.log(depositArgs);
       if (pool.tokenAddress) {
         fetchDeposit(depositArgs)
           .then(() => {
@@ -309,7 +309,7 @@ const DepositSection = ({ pool }) => {
   const vaultState = getVaultState(pool.status, pool.depositsPaused);
   const swapTokenOut = depositSettings.isZap
     ? eligibleTokens.find(
-        t => t.address.toLowerCase() == pool.zapEstimate?.swapTokenOut?.toLowerCase()
+        t => t.address.toLowerCase() === pool.zapEstimate?.swapTokenOut?.toLowerCase()
       )
     : undefined;
 

@@ -1,16 +1,16 @@
 import React from 'react';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
+//import Select from '@material-ui/core/Select';
+//import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
 import { useTranslation } from 'react-i18next';
 import Grid from '@material-ui/core/Grid';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Checkbox from '@material-ui/core/Checkbox';
-import InputLabel from '@material-ui/core/InputLabel';
+//import InputLabel from '@material-ui/core/InputLabel';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
-import { Avatar, Box, Button } from '@material-ui/core';
+import { /*Avatar, Box,*/ Button } from '@material-ui/core';
 
 import styles from './styles';
 import { platforms, assets } from './constants';
@@ -33,9 +33,9 @@ const Filters = ({
   const classes = useStyles();
 
   const handlePlatformChange = (_event, option) => setPlatform(option.value);
-  const handleVaultTypeChange = event => setVaultType(event.target.value);
+  //const handleVaultTypeChange = event => setVaultType(event.target.value);
   const handleAssetChange = (_event, option) => setAsset(option.value);
-  const handleOrderChange = event => setOrder(event.target.value);
+  //const handleOrderChange = event => setOrder(event.target.value);
 
   const options = [
     {
@@ -150,7 +150,6 @@ const Filters = ({
           />
         </FormControl>
       </Grid>
-
     </Grid>
   );
 };

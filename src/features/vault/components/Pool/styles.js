@@ -1,4 +1,3 @@
-import { transparentColor } from 'assets/jss/material-kit-pro-react';
 import { hexToRgb } from 'assets/jss/material-kit-pro-react';
 
 const styles = theme => ({

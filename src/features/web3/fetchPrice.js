@@ -11,11 +11,11 @@ const priceCache = {
   cache: new Map(),
   lastUpdated: undefined,
 };
-
+/*
 function isCached(id) {
   return priceCache.cache.has(id);
 }
-
+*/
 function getCachedPrice(id) {
   return priceCache.cache.get(id);
 }

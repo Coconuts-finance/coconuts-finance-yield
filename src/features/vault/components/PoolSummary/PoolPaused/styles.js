@@ -4,6 +4,7 @@ const styles = theme => ({
     top: '0px',
     left: '0px',
     backgroundColor: 'rgba(0,0,0,0.15)',
+    width: '100%',
   },
   texts: {
     padding: '5px 10px',

@@ -8,7 +8,7 @@ import { useSnackbar } from 'notistack';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import CircularProgress from '@material-ui/core/CircularProgress';
+//import CircularProgress from '@material-ui/core/CircularProgress';
 
 import Button from 'components/CustomButtons/Button.js';
 import CustomOutlinedInput from 'components/CustomOutlinedInput/CustomOutlinedInput';
@@ -17,7 +17,7 @@ import RefundButtons from '../RefundButtons/RefundButtons';
 import {
   byDecimals,
   convertAmountToRawNumber,
-  convertAmountFromRawNumber,
+  //convertAmountFromRawNumber,
 } from 'features/helpers/bignumber';
 import { shouldHideFromHarvest } from 'features/helpers/utils';
 import {

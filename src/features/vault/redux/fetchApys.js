@@ -6,7 +6,7 @@ import {
   VAULT_FETCH_APYS_SUCCESS,
   VAULT_FETCH_APYS_FAILURE,
 } from './constants';
-import { getApiCacheBuster } from '../../web3/getApiCacheBuster';
+//import { getApiCacheBuster } from '../../web3/getApiCacheBuster';
 
 export function fetchApys() {
   return dispatch => {
@@ -15,7 +15,7 @@ export function fetchApys() {
     });
 
     return new Promise((resolve, reject) => {
-      const cacheBuster = getApiCacheBuster();
+      //const cacheBuster = getApiCacheBuster();
       //const url = `https://api.robo-vault.com/vault?_=${cacheBuster}`
       const url = `${process.env.REACT_APP_API_URL}/api/apys?network=${process.env.REACT_APP_NETWORK_ID}`;
       const doRequest = axios.get(url, { crossDomain: true });

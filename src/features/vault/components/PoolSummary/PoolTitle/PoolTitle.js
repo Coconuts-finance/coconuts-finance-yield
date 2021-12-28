@@ -11,7 +11,7 @@ import { Fade, Tooltip } from '@material-ui/core';
 
 const useStyles = makeStyles(styles);
 
-const lowLiquidityTooltip = memo(({ rows }) => {
+/*const lowLiquidityTooltip = memo(({ rows }) => {
   const classes = useStyles();
 
   return (
@@ -22,7 +22,7 @@ const lowLiquidityTooltip = memo(({ rows }) => {
     </div>
   );
 });
-
+*/
 const singleAssetExtensions = ['svg', 'webp', 'png'];
 const singleAsset = symbol => {
   for (let ext of singleAssetExtensions) {
@@ -56,7 +56,7 @@ const PoolTitle = ({
   const { t } = useTranslation();
 
   let avatar;
-  let single = assets.length == 1;
+  let single = assets.length === 1;
 
   if (logo) {
     avatar = (

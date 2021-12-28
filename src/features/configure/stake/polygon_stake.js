@@ -1,4 +1,4 @@
-import { govPoolABI, klimaPoolABI } from '../abi';
+import { /*govPoolABI,*/ klimaPoolABI } from '../abi';
 
 export const polygonStakePools = [
   {

@@ -1,8 +1,8 @@
-import { connectors } from 'web3modal';
+//import { connectors } from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 
 import {
-  avalanchePools,
+  /*avalanchePools,
   avalancheStakePools,
   avaxAddressBook,
   avalancheZaps,
@@ -17,7 +17,7 @@ import {
   hecoPools,
   hecoStakePools,
   hecoAddressBook,
-  hecoZaps,
+  hecoZaps,*/
   nativeCoins,
   polygonPools,
   polygonStakePools,
@@ -52,7 +52,7 @@ const networkBuyLinks = {
 };
 
 export const getNetworkCoin = () => {
-  return nativeCoins.find(coin => coin.chainId == process.env.REACT_APP_NETWORK_ID);
+  return nativeCoins.find(coin => coin.chainId === process.env.REACT_APP_NETWORK_ID);
 };
 
 export const getNetworkPools = () => {
