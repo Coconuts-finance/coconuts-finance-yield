@@ -2,7 +2,7 @@
 
 ## Overview
 
-Frontend repo of [Coconuts.finance](https://docs.coconuts.finance/). 
+Frontend repo of [Coconuts.finance](https://chimera-1.gitbook.io/coconuts-finance/).
 
 ## Env
 
