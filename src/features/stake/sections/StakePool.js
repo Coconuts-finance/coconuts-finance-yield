@@ -36,14 +36,14 @@ import { styles } from './styles/view';
 import Divider from '@material-ui/core/Divider';
 import { formatApy, formatCountdown } from '../../helpers/format';
 import { Helmet } from 'react-helmet';
-import { getNetworkFriendlyName } from '../../helpers/getNetworkData';
-import { getPageMeta, usePageMeta } from '../../common/getPageMeta';
+//import { getNetworkFriendlyName } from '../../helpers/getNetworkData';
+import { /*getPageMeta,*/ usePageMeta } from '../../common/getPageMeta';
 
 const useStyles = makeStyles(styles);
 
 export default function StakePool(props) {
   const classes = useStyles();
-  const { t, i18n } = useTranslation();
+  const { t /*, i18n*/ } = useTranslation();
   const { address } = useConnectWallet();
   const { allowance, checkApproval } = useCheckApproval();
   const { balance, fetchBalance } = useFetchBalance();
@@ -173,7 +173,7 @@ export default function StakePool(props) {
   }, [rewardsAvailable[index], index]);
 
   useEffect(() => {
-    if (halfTime[index] == 0) {
+    if (halfTime[index] === 0) {
       if (!pools[index].hideCountdown === true) {
         pools[index].status = 'soon';
       }
@@ -531,7 +531,11 @@ export default function StakePool(props) {
                       />
                     </Box>
                     <Box>
-                      <img className={classes.boostImg} src={require('images/stake/boost.svg')} />
+                      <img
+                        className={classes.boostImg}
+                        src={require('images/stake/boost.svg')}
+                        alt=""
+                      />
                     </Box>
                   </Box>
                 ) : (

@@ -66,6 +66,7 @@ function showBoosted(pools) {
   });
 }
 
+/*
 function hideDecomissioned(pools, tokens) {
   return pools.filter(pool => {
     return (
@@ -74,7 +75,7 @@ function hideDecomissioned(pools, tokens) {
     );
   });
 }
-
+*/
 function hideZeroBalances(pools, tokens) {
   return pools.filter(pool => {
     if (tokens[pool.token]) {

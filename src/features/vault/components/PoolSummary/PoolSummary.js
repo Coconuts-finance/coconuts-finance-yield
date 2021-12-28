@@ -79,6 +79,8 @@ const PoolSummary = ({
     [toggleCard]
   );
 
+  const mt = pool.status === 'eol' || pool.depositsPaused ? '-15px' : '-40px';
+
   return (
     <AccordionSummary
       className={
@@ -91,7 +93,7 @@ const PoolSummary = ({
       style={{ justifyContent: 'space-between' }}
       onClick={onSummaryClick}
     >
-      <Grid container alignItems="center" style={{ marginTop: '-40px' }}>
+      <Grid container alignItems="center" style={{ marginTop: mt }}>
         {vaultStateTitle}
         <Grid item xs={12} className={`${classes.item} ${classes.itemTitle}`}>
           <PoolTitle

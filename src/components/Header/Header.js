@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+//import { useTranslation } from 'react-i18next';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
 import Drawer from '@material-ui/core/Drawer';
 import Menu from '@material-ui/icons/Menu';
-import Close from '@material-ui/icons/Close';
+//import Close from '@material-ui/icons/Close';
 import WbSunny from '@material-ui/icons/WbSunny';
 import NightsStay from '@material-ui/icons/NightsStay';
 import { getNetworkBuyLink } from '../../features/helpers/getNetworkData';
@@ -19,7 +19,7 @@ const useStyles = makeStyles(styles);
 const Header = ({ links, isNightMode, setNightMode }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const classes = useStyles();
-  const { t } = useTranslation();
+  //const { t } = useTranslation();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -47,6 +47,24 @@ const Header = ({ links, isNightMode, setNightMode }) => {
           </Hidden>
         </Button>
 
+        <div className={classes.middleNav}>
+          <Hidden smDown>
+            <Button className={classes.link} href="/">
+              <span>Pools</span>
+            </Button>
+            <Button className={classes.link} href="/stake">
+              <span>Stake</span>
+            </Button>
+          </Hidden>
+          <Hidden mdUp>
+            <Button className={classes.link} href="/">
+              <span>Pools</span>
+            </Button>
+            <Button className={classes.link} href="/stake">
+              <span>Stake</span>
+            </Button>
+          </Hidden>
+        </div>
         <Hidden smDown implementation="css">
           <div className={classes.collapse}>{links}</div>
         </Hidden>
@@ -98,7 +116,7 @@ const renderLink = (name, label, icon, classes) => {
     </a>
   );
 };
-
+/*
 const renderBoost = classes => {
   return (
     <a className={classes.btnBoost} href="/stake">
@@ -106,7 +124,7 @@ const renderBoost = classes => {
     </a>
   );
 };
-
+*/
 const LinkSidebar = ({ name, label, icon, classes }) => (
   <div style={{ width: '100%', paddingTop: '10px' }}>{renderLink(name, label, icon, classes)}</div>
 );

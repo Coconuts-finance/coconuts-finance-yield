@@ -14,7 +14,7 @@ import { SnackbarProvider } from 'notistack';
 import { Notifier } from 'features/common';
 
 import Footer from 'components/Footer/Footer';
-import Pastures from 'components/Pastures/Pastures';
+//import Pastures from 'components/Pastures/Pastures';
 import appStyle from './jss/appStyle.js';
 
 import { createWeb3Modal } from '../web3';
@@ -75,7 +75,7 @@ export default function App({ children }) {
                   theme.palette.background.color1 +
                   ' 20%, ' +
                   theme.palette.background.color2 +
-                  ' 64%, ' +
+                  ' 50%, ' +
                   theme.palette.background.color3 +
                   ' 100%)',
               }}
