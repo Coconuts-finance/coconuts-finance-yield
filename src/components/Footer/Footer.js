@@ -15,7 +15,7 @@ const Footer = () => {
       <div className={classes.column}>
         <div className={classes.title}>Coconuts.finance</div>
         <a
-          href="https://docs.robo-vault.com"
+          href="https://chimera-1.gitbook.io/coconuts-finance/"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -35,7 +35,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://github.com/chimera-defi/coconuts-finance-yield"
+          href="https://github.com/Coconuts-finance/coconuts-finance-yield"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
@@ -44,7 +44,7 @@ const Footer = () => {
           <span>{t('source')}</span>
         </a>
 
-        <a
+        {/*<a
           href="http://analytics.coconuts.finance/"
           target="_blank"
           rel="noopener noreferrer"
@@ -52,7 +52,7 @@ const Footer = () => {
         >
           <i className={`fa fa-bar-chart ${classes.linkIcon}`}></i>
           <span>{'analytics'}</span>
-        </a>
+        </a>*/}
       </div>
 
       <div className={classes.column}>
@@ -69,7 +69,7 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://discord.gg/EtPMckn9"
+          href="https://discord.gg/z6bpPh4Ufp"
           target="_blank"
           rel="noopener noreferrer"
           className={classes.link}
