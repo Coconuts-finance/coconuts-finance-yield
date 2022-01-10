@@ -136,5 +136,14 @@
   "Boost": "Boost",
   "Experimental": "Experimental",
   "Select-Network": "Select Network",
-  "Deposit-Earn": "Deposit {{depositToken}}, earn {{earnToken}}"
+  "Deposit-Earn": "Deposit {{depositToken}}, earn {{earnToken}}",
+  "Airdrop-Title": "Airdrop eligibility",
+  "Airdrop-Tokens": "{{amount}} tokens",
+  "Airdrop-Eligible": "You are eligible for <1>{{count}} token</1> !!",
+  "Airdrop-Eligible_plural": "You are eligible for <1>{{count}} tokens</1> !!",
+  "Airdrop-Not-Eligible": "You are not eligible",
+  "Airdrop-Check-Eligibility": "Check eligibility",
+  "Airdrop-Info-1": "We propose a large lock-drop for the CNC token to attract initial users and create initial liquidity.",
+  "Airdrop-Info-2": "Similar to gearbox.finance, delphi digital & dydx users will have to earn these tokens.",
+  "Airdrop-Info-Link": "More information <1>Here</1>"
 }

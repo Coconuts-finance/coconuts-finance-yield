@@ -88,5 +88,14 @@
   "Finished": "Terminato",
   "End": "Fine",
   "Select-Network": "Seleziona rete",
-  "Deposit-Earn": "Deposita {{depositToken}}, guadagna {{earnToken}}"
+  "Deposit-Earn": "Deposita {{depositToken}}, guadagna {{earnToken}}",
+  "Airdrop-Title": "Idoneità Airdrop",
+  "Airdrop-Tokens": "{{amount}} tokens",
+  "Airdrop-Eligible": "Hai diritto a <1>{{count}} token</1> !!",
+  "Airdrop-Eligible_plural": "Hai diritto a <1>{{count}} tokens</1> !!",
+  "Airdrop-Not-Eligible": "Non sei idoneo",
+  "Airdrop-Check-Eligibility": "Verifica l'idoneità",
+  "Airdrop-Info-1": "We propose a large lock-drop for the CNC token to attract initial users and create initial liquidity.",
+  "Airdrop-Info-2": "Similar to gearbox.finance, delphi digital & dydx users will have to earn these tokens.",
+  "Airdrop-Info-Link": "More information <1>Here</1>"
 }

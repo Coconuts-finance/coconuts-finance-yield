@@ -78,5 +78,14 @@
   "Boost": "Gia tăng",
   "Experimental": "Thực nghiệm",
   "Select-Network": "Chọn mạng",
-  "Deposit-Earn": "Gửi {{depositToken}}, kiếm {{earnToken}}"
+  "Deposit-Earn": "Gửi {{depositToken}}, kiếm {{earnToken}}",
+  "Airdrop-Title": "Tính đủ điều kiện của airdrop",
+  "Airdrop-Tokens": "{{amount}} token",
+  "Airdrop-Eligible": "Bạn đủ điều kiện nhận <1>{{count}} token</1> !!",
+  "Airdrop-Eligible_plural": "Bạn đủ điều kiện nhận <1>{{count}} tokens</1> !!",
+  "Airdrop-Not-Eligible": "Bạn không đủ điều kiện",
+  "Airdrop-Check-Eligibility": "Kiểm tra tính đủ điều kiện",
+  "Airdrop-Info-1": "We propose a large lock-drop for the CNC token to attract initial users and create initial liquidity.",
+  "Airdrop-Info-2": "Similar to gearbox.finance, delphi digital & dydx users will have to earn these tokens.",
+  "Airdrop-Info-Link": "More information <1>Here</1>"
 }

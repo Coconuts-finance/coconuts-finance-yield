@@ -5,6 +5,7 @@ import homeReducer from 'features/home/redux/reducer';
 import vaultReducer from 'features/vault/redux/reducer';
 import stakeReducer from 'features/stake/redux/reducer';
 import commonReducer from 'features/common/redux/reducer';
+import checkEligibilityReducer from 'features/airdrop/redux/reducer';
 
 // NOTE 1: DO NOT CHANGE the 'reducerMap' name and the declaration pattern.
 // This is used for Rekit cmds to register new features, remove features, etc.
@@ -17,6 +18,7 @@ const reducerMap = {
   vault: vaultReducer,
   stake: stakeReducer,
   common: commonReducer,
+  airdrop: checkEligibilityReducer,
 };
 
 export default combineReducers(reducerMap);
