@@ -5,7 +5,12 @@ const styles = theme => ({
     padding: '24px',
     margin: '8px 0 2rem',
     border: '1px solid ' + theme.palette.background.border,
-    backgroundColor: 'rgba(' + hexToRgb(theme.palette.background.sand) + ', 0.9)',
+    backgroundColor:
+      'rgba(' +
+      hexToRgb(theme.palette.background.sand) +
+      ', ' +
+      theme.palette.background.sandOpacity +
+      ')',
     justifyContent: 'space-between',
     position: 'relative',
     borderRadius: '5px',
@@ -46,10 +51,14 @@ const styles = theme => ({
     position: 'absolute',
     top: '5px',
     right: '5px',
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: theme.palette.background.button,
     '& .MuiButton-label': {
       fontWeight: 'bold',
       textTransform: 'capitalize',
+      color: theme.palette.text.button,
+    },
+    '&:hover .MuiButton-label': {
+      color: theme.palette.background.button,
     },
   },
 });

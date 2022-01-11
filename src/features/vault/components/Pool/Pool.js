@@ -37,7 +37,20 @@ const Pool = ({
   let sharesBalance = new BigNumber(tokens[pool.earnedToken].tokenBalance);
 
   return (
-    <Grid item xs={12} container key={index} className={classes.container} spacing={0}>
+    <Grid
+      item
+      xs={12}
+      container
+      key={index}
+      className={
+        pool.status === 'eol'
+          ? classes.containerRetired
+          : pool.depositsPaused
+          ? classes.containerPaused
+          : classes.container
+      }
+      spacing={0}
+    >
       <Accordion
         expanded={isOpen}
         className={classes.accordion}

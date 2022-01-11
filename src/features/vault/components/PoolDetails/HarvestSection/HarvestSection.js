@@ -14,12 +14,14 @@ import Button from 'components/CustomButtons/Button.js';
 import { useFetchHarvest } from 'features/vault/redux/hooks';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import styles from './styles';
+import useSharedButtons from 'features/common/styles/buttons';
 
 const useStyles = makeStyles(styles);
 
 const HarvestSection = ({ pool, index }) => {
   const { t } = useTranslation();
   const classes = useStyles();
+  const sharedButtons = useSharedButtons();
   const { web3, address } = useConnectWallet();
   const { enqueueSnackbar } = useSnackbar();
   const { fetchHarvest, fetchHarvestPending } = useFetchHarvest();
@@ -54,14 +56,14 @@ const HarvestSection = ({ pool, index }) => {
         </DialogContent>
         <DialogActions>
           <Button
-            className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined} `}
+            className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonOutlined} `}
             color="primary"
             onClick={() => setShowHarvestModal(false)}
           >
             {t('Cancel')}
           </Button>
           <Button
-            className={`${classes.showDetailButton} ${classes.showDetailButtonContained} `}
+            className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonContained} `}
             onClick={() => onHarvest()}
           >
             {t('Confirm')}
@@ -73,7 +75,7 @@ const HarvestSection = ({ pool, index }) => {
           <div className={classes.showDetailLeft}>{/* {t('Vault-LastHarvest')}: */}</div>
           <div style={{ textAlign: 'center' }}>
             <Button
-              className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined} ${classes.showResponsiveButtonCon}`}
+              className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonOutlined} ${classes.showResponsiveButtonCon}`}
               style={{ marginBottom: pool.platform === 'Autofarm' ? '48px' : '12px' }}
               type="button"
               color="primary"

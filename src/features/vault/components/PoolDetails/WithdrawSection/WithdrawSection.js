@@ -29,6 +29,7 @@ import {
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { getNetworkCoin } from 'features/helpers/getNetworkData';
 import styles from './styles';
+import useSharedButtons from 'features/common/styles/buttons';
 
 const useStyles = makeStyles(styles);
 const nativeCoin = getNetworkCoin();
@@ -36,6 +37,7 @@ const nativeCoin = getNetworkCoin();
 const WithdrawSection = ({ pool, index, sharesBalance }) => {
   const { t } = useTranslation();
   const classes = useStyles();
+  const sharedButtons = useSharedButtons();
   const { web3, address } = useConnectWallet();
   const { enqueueSnackbar } = useSnackbar();
   const { fetchApproval, fetchApprovalPending } = useFetchApproval();
@@ -361,7 +363,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         onChange={handleSliderChange}
         onChangeCommitted={handleSliderChangeCommitted}
       />
-      <div className={classes.showDetailButtonCon}>
+      <div className={sharedButtons.showDetailButtonCon}>
         {pool.refund === true ? (
           <RefundButtons
             tokenAddress={pool.earnedTokenAddress}
@@ -371,9 +373,9 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
         ) : (
           <div>
             {withdrawSettings.isNeedApproval ? (
-              <div className={classes.showDetailButtonCon}>
+              <div className={sharedButtons.showDetailButtonCon}>
                 <Button
-                  className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+                  className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonContained}`}
                   onClick={handleApproval}
                   disabled={fetchApprovalPending[pool.earnedToken]}
                 >
@@ -383,9 +385,9 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
                 </Button>
               </div>
             ) : (
-              <div className={classes.showDetailButtonCon}>
+              <div className={sharedButtons.showDetailButtonCon}>
                 <Button
-                  className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
+                  className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonOutlined}`}
                   type="button"
                   color="primary"
                   disabled={
@@ -399,7 +401,7 @@ const WithdrawSection = ({ pool, index, sharesBalance }) => {
                 </Button>
                 {!withdrawSettings.isSwap && (
                   <Button
-                    className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
+                    className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonOutlined}`}
                     type="button"
                     color="primary"
                     disabled={sharesBalance.isZero()}

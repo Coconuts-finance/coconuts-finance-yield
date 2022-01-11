@@ -1,10 +1,8 @@
 import { container } from 'assets/jss/material-kit-pro-react.js';
-//import { hexToRgb } from 'assets/jss/material-kit-pro-react.js';
 
 const appStyle = theme => ({
   page_outer: {},
   page_inner: {
-    backgroundImage: 'url("/assets/img/coconuts-island-2.png")',
     backgroundPosition: 'bottom right',
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',

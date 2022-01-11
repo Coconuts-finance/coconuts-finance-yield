@@ -1,20 +1,6 @@
-import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
+import { hexToRgb } from 'assets/jss/material-kit-pro-react.js';
 
 const styles = theme => ({
-  noWalletButtonCon: {
-    display: 'flex',
-    justifyContent: 'space-around',
-  },
-  noWalletButton: {
-    margin: '20px 0',
-    fontSize: '14px',
-    fontWeight: 'bold',
-    borderRadius: '5px',
-    backgroundColor: primaryColor[0],
-    '& .MuiButton-label': {
-      color: 'white',
-    },
-  },
   container: {
     position: 'relative',
     backgroundColor: theme.palette.background.extra,
@@ -36,10 +22,26 @@ const styles = theme => ({
     marginBottom: '8px',
     background: pool =>
       pool.status === 'eol'
-        ? theme.palette.background.retired
-        : pool.depositsPaused
-        ? theme.palette.background.paused
-        : theme.palette.background.primary,
+        ? 'rgba(' +
+          hexToRgb(theme.palette.background.retired) +
+          ', ' +
+          theme.palette.background.sandOpacity +
+          ')'
+        : 'rbga(' +
+          hexToRgb(pool.depositsPaused) +
+          ', ' +
+          theme.palette.background.sandOpacity +
+          ')'
+        ? 'rgba(' +
+          hexToRgb(theme.palette.background.paused) +
+          ', ' +
+          theme.palette.background.sandOpacity +
+          ')'
+        : 'rgba(' +
+          hexToRgb(theme.palette.background.primary) +
+          ', ' +
+          theme.palette.background.sandOpacity +
+          ')',
   },
   description: {
     padding: '8px',
@@ -91,32 +93,6 @@ const styles = theme => ({
   },
   itemInner: {
     textAlign: 'center',
-  },
-  showDetailButton: {
-    margin: '12px 5px',
-    fontSize: '14px',
-    fontWeight: 'bold',
-    borderRadius: '5px',
-    width: '160px',
-  },
-  showDetailButtonOutlined: {
-    backgroundColor: 'transparent',
-    border: `1px solid ${theme.palette.primary.main}`,
-    color: primaryColor[0],
-    '&:hover': {
-      '& .MuiButton-label': {
-        color: 'white',
-      },
-    },
-    '& .MuiTouchRipple-root span': {
-      backgroundColor: primaryColor[0],
-    },
-  },
-  showDetailButtonContained: {
-    backgroundColor: primaryColor[0],
-    '& .MuiButton-label': {
-      color: 'white',
-    },
   },
 });
 

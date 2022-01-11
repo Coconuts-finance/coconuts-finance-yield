@@ -5,8 +5,36 @@ const styles = theme => ({
     marginBottom: '24px',
     border: '1px solid ' + theme.palette.background.border,
     borderRadius: '5px',
-    background: 'rgba(' + hexToRgb(theme.palette.background.sand) + ', 0.9)',
+    background:
+      'rgba(' +
+      hexToRgb(theme.palette.background.sand) +
+      ', ' +
+      theme.palette.background.sandOpacity +
+      ')',
   },
+  containerPaused: {
+    marginBottom: '24px',
+    border: '1px solid ' + theme.palette.background.border,
+    borderRadius: '5px',
+    background:
+      'rgba(' +
+      hexToRgb(theme.palette.background.paused) +
+      ', ' +
+      theme.palette.background.sandOpacity +
+      ')',
+  },
+  containerRetired: {
+    marginBottom: '24px',
+    border: '1px solid ' + theme.palette.background.border,
+    borderRadius: '5px',
+    background:
+      'rgba(' +
+      hexToRgb(theme.palette.background.retired) +
+      ', ' +
+      theme.palette.background.sandOpacity +
+      ')',
+  },
+
   accordion: {
     width: '100%',
     backgroundColor: 'transparent',

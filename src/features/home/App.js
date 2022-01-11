@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { hexToRgb } from 'assets/jss/material-kit-pro-react';
 import { ThemeProvider, StylesProvider } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -71,16 +72,31 @@ export default function App({ children }) {
               className={classes.page_outer}
               style={{
                 backgroundImage:
-                  'linear-gradient(180deg, ' +
-                  theme.palette.background.color1 +
-                  ' 20%, ' +
-                  theme.palette.background.color2 +
-                  ' 50%, ' +
-                  theme.palette.background.color3 +
-                  ' 100%)',
+                  'linear-gradient(180deg, rgba(' +
+                  hexToRgb(theme.palette.background.gradient1) +
+                  ', ' +
+                  theme.palette.background.gradientOpacity +
+                  ') 0%, rgba(' +
+                  hexToRgb(theme.palette.background.gradient2) +
+                  ', ' +
+                  theme.palette.background.gradientOpacity +
+                  ') 30%, rgba(' +
+                  hexToRgb(theme.palette.background.gradient3) +
+                  ', ' +
+                  theme.palette.background.gradientOpacity +
+                  ') 50%, rgba(' +
+                  hexToRgb(theme.palette.background.gradient4) +
+                  ', ' +
+                  theme.palette.background.gradientOpacity +
+                  ') 80%)',
               }}
             >
-              <div className={classes.page_inner}>
+              <div
+                className={classes.page_inner}
+                style={{
+                  backgroundImage: 'url("/assets/img/' + theme.palette.background.image + '")',
+                }}
+              >
                 <div className={classes.page} style={{ backgroundColor: 'transparent' }}>
                   <Header
                     links={
