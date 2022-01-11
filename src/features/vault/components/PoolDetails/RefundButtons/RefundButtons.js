@@ -1,17 +1,20 @@
 import React, { memo } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { useSnackbar } from 'notistack';
 
 import { useFetchApproval } from '../../../redux/hooks';
 import Button from 'components/CustomButtons/Button.js';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { refundABI } from 'features/configure/abi';
-import styles from './styles';
+import useSharedButtons from 'features/common/styles/buttons';
 
-const useStyles = makeStyles(styles);
+//import { makeStyles } from '@material-ui/core/styles';
+//import styles from './styles';
+
+//const useStyles = makeStyles(styles);
 
 const RefundButtons = ({ tokenAddress, refundAddress, index }) => {
-  const classes = useStyles();
+  //const classes = useStyles();
+  const sharedButtons = useSharedButtons();
   const { web3, address } = useConnectWallet();
   const { enqueueSnackbar } = useSnackbar();
   const { fetchApproval } = useFetchApproval();
@@ -37,13 +40,13 @@ const RefundButtons = ({ tokenAddress, refundAddress, index }) => {
   return (
     <>
       <Button
-        className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+        className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonContained}`}
         onClick={onRefundApproval}
       >
         Approve
       </Button>
       <Button
-        className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+        className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonContained}`}
         onClick={onRefund}
       >
         Refund

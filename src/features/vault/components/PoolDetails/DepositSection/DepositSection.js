@@ -24,10 +24,12 @@ import { shouldHideFromHarvest } from 'features/helpers/utils';
 import { convertAmountToRawNumber, convertAmountFromRawNumber } from 'features/helpers/bignumber';
 import Button from 'components/CustomButtons/Button.js';
 import styles from './styles';
+import useSharedButtons from 'features/common/styles/buttons';
 
 const useStyles = makeStyles(styles);
 
 const DepositSection = ({ pool }) => {
+  const sharedButtons = useSharedButtons();
   const { t } = useTranslation();
   const classes = useStyles();
   const { web3, address } = useConnectWallet();
@@ -288,7 +290,7 @@ const DepositSection = ({ pool }) => {
     if (status === 'eol') {
       display = true;
       cont = (
-        <div className={classes.showDetailButtonCon}>
+        <div className={sharedButtons.showDetailButtonCon}>
           <div className={classes.showRetiredMsg}>{t('Vault-DepositsRetiredMsg')}</div>
         </div>
       );
@@ -296,7 +298,7 @@ const DepositSection = ({ pool }) => {
       if (paused) {
         display = true;
         cont = (
-          <div className={classes.showDetailButtonCon}>
+          <div className={sharedButtons.showDetailButtonCon}>
             <div className={classes.showPausedMsg}>{t('Vault-DepositsPausedMsg')}</div>
           </div>
         );
@@ -369,9 +371,9 @@ const DepositSection = ({ pool }) => {
       ) : (
         <div>
           {depositSettings.isNeedApproval ? (
-            <div className={classes.showDetailButtonCon}>
+            <div className={sharedButtons.showDetailButtonCon}>
               <Button
-                className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+                className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonContained}`}
                 onClick={handleApproval}
                 disabled={pool.depositsPaused || fetchApprovalPending[depositSettings.token.symbol]}
               >
@@ -381,9 +383,9 @@ const DepositSection = ({ pool }) => {
               </Button>
             </div>
           ) : (
-            <div className={classes.showDetailButtonCon}>
+            <div className={sharedButtons.showDetailButtonCon}>
               <Button
-                className={`${classes.showDetailButton} ${classes.showDetailButtonOutlined}`}
+                className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonOutlined}`}
                 color="primary"
                 disabled={
                   pool.depositsPaused ||
@@ -398,7 +400,7 @@ const DepositSection = ({ pool }) => {
               </Button>
               {Boolean(pool.tokenAddress) && Boolean(!depositSettings.isZap) && (
                 <Button
-                  className={`${classes.showDetailButton} ${classes.showDetailButtonContained}`}
+                  className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonContained}`}
                   disabled={
                     pool.depositsPaused ||
                     fetchDepositPending[pool.earnContractAddress] ||

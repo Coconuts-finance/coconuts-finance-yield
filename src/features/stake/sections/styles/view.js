@@ -8,10 +8,10 @@ const styles = theme => ({
     fontSize: '14px',
     fontWeight: 'bold',
     textTransform: 'capitalize',
-    borderRadius: '20px',
-    backgroundColor: primaryColor[0],
+    borderRadius: '5px',
+    backgroundColor: theme.palette.background.button, // primaryColor[0],
     '& .MuiButton-label': {
-      color: 'white',
+      color: theme.palette.text.button, //'white',
     },
   },
   countdown: {
@@ -34,7 +34,12 @@ const styles = theme => ({
     marginBottom: '24px',
     border: '1px solid ' + theme.palette.background.border,
     borderRadius: '8px',
-    backgroundColor: 'rgba(' + hexToRgb(theme.palette.background.sand) + ', 0.9)',
+    backgroundColor:
+      'rgba(' +
+      hexToRgb(theme.palette.background.sand) +
+      ', ' +
+      theme.palette.background.sandOpacity +
+      ')',
     '& .MuiAvatar-root': {
       width: theme.spacing(7),
       height: theme.spacing(7),
@@ -81,9 +86,9 @@ const styles = theme => ({
     fontWeight: 'bold',
     borderRadius: '5px',
     minWidth: '185px',
-    backgroundColor: primaryColor[0],
+    backgroundColor: theme.palette.background.button, // primaryColor[0],
     '& .MuiButton-label': {
-      color: 'white',
+      color: theme.palette.text.button, // 'white',
       textTransform: 'capitalize',
     },
   },
