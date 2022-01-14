@@ -94,6 +94,44 @@ const styles = theme => ({
   itemInner: {
     textAlign: 'center',
   },
+  simpleTabAccordion: {
+    justifyContent: 'space-between',
+  },
+  multiTabAccordion: {
+    justifyContent: 'space-between',
+    display: 'block',
+
+    '& .MuiTabs-indicator': {
+      display: 'none',
+    },
+  },
+  multiTabs: {
+    margin: '25px',
+    '& .MuiTabs-flexContainer': {
+      borderBottom: '1px solid rgba(' + hexToRgb(theme.palette.primary.main) + ',0.12)',
+    },
+  },
+  tab: {
+    borderTopLeftRadius: '5px',
+    borderTopRightRadius: '5px',
+    border: '1px solid rgba(' + hexToRgb(theme.palette.primary.main) + ',0.12)',
+    //border: '1px solid rgba(' + hexToRgb(theme.palette.primary.main)+ ',0.12)',
+    marginLeft: '15px',
+    marginRight: '0px',
+    marginBottom: '-1px',
+    backgroundColor:
+      'rgba(' +
+      hexToRgb(theme.palette.background.sand) +
+      ', ' +
+      theme.palette.background.sandOpacity +
+      ')',
+
+    '&.Mui-selected': {
+      backgroundColor: 'transparent',
+      border: '1px solid rgba(' + hexToRgb(theme.palette.primary.main) + ',0.12)',
+      borderBottom: '1px solid ' + theme.palette.background.sand,
+    },
+  },
 });
 
 export default styles;

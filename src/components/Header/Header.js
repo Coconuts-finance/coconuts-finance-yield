@@ -130,7 +130,15 @@ const LinkSidebar = ({ name, label, icon, classes }) => (
 );
 
 const getLinkUrl = name => {
-  return name === 'buy' ? getNetworkBuyLink() : `https://${name}.coconuts.finance`;
+  switch (name) {
+    case 'buy':
+      return getNetworkBuyLink();
+    case 'docs':
+      return 'https://chimera-1.gitbook.io/coconuts-finance/';
+  }
+
+  return `https://${name}.coconuts.finance`;
+  //return name === 'buy' ? getNetworkBuyLink() : `https://${name}.coconuts.finance`;
 };
 
 export default Header;

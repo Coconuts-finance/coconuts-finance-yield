@@ -3,8 +3,8 @@ import AccordionDetails from '@material-ui/core/AccordionActions';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import PoolActions from '../PoolActions/PoolActions';
-//import { makeStyles } from '@material-ui/core/styles';
-//import styles from './styles';
+import { makeStyles } from '@material-ui/core/styles';
+import styles from './styles';
 import useSharedButtons from 'features/common/styles/buttons';
 import Button from 'components/CustomButtons/Button.js';
 import { useConnectWallet } from 'features/home/redux/hooks';
@@ -22,10 +22,10 @@ TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-//const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles);
 
 const PoolAccordion = ({ pool, balanceSingle, index, sharesBalance }) => {
-  //const classes = useStyles();
+  const classes = useStyles();
   const sharedButtons = useSharedButtons();
   const { t } = useTranslation();
   const { connected, connectWallet } = useConnectWallet();
@@ -42,10 +42,10 @@ const PoolAccordion = ({ pool, balanceSingle, index, sharesBalance }) => {
   if (connected) {
     if (pool.useStake) {
       return (
-        <AccordionDetails style={{ justifyContent: 'space-between', display: 'block' }}>
-          <Tabs value={tabIndex} onChange={handleChange}>
-            <Tab label="Step 1: Deposit" />
-            <Tab label="Step 2: Stake" />
+        <AccordionDetails className={classes.multiTabAccordion}>
+          <Tabs className={classes.multiTabs} value={tabIndex} onChange={handleChange}>
+            <Tab className={classes.tab} label="Step 1: Deposit" />
+            <Tab className={classes.tab} label="Step 2: Stake" />
           </Tabs>
           {tabIndex === 0 && (
             <TabContainer>
@@ -80,7 +80,7 @@ const PoolAccordion = ({ pool, balanceSingle, index, sharesBalance }) => {
       );
     } else {
       return (
-        <AccordionDetails style={{ justifyContent: 'space-between' }}>
+        <AccordionDetails className={classes.simpleTabAccordion}>
           <PoolActions pool={pool} balanceSingle={balanceSingle} sharesBalance={sharesBalance} />
         </AccordionDetails>
       );

@@ -96,11 +96,11 @@ export default function StakePools(props) {
 
   return (
     <Grid container>
-      <Grid item xs={12}>
+      {/*<Grid item xs={12}>
         <div className={classes.launchpool}>
           <img alt="Launchpool" src={require('images/stake/launchpool.png')} />
         </div>
-      </Grid>
+      </Grid>*/}
       <Grid item xs={12} style={{ paddingBottom: '20px', textAlign: 'right' }}>
         <ToggleButtonGroup
           className={classes.filters}
