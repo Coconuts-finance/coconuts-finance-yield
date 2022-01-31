@@ -64,10 +64,7 @@ function Root() {
         <meta name="description" content={getPageMeta('App-Meta-Description')} />
         <meta property="og:title" content={getPageMeta('App-Meta-Title')} />
         <meta property="og:description" content={getPageMeta('App-Meta-Description')} />
-        <meta
-          property="og:url"
-          content={process.env.PUBLIC_URL || 'https://docs.coconuts.finance'}
-        />
+        <meta property="og:url" content={process.env.PUBLIC_URL || 'https://coconuts.finance'} />
       </Helmet>
       <ConnectedRouter history={history}>{children}</ConnectedRouter>
     </Provider>

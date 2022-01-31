@@ -1,5 +1,3 @@
-import { primaryColor } from 'assets/jss/material-kit-pro-react.js';
-
 const styles = theme => ({
   sliderDetailContainer: {
     padding: '24px 30px',
@@ -28,32 +26,6 @@ const styles = theme => ({
     },
     [theme.breakpoints.up('lg')]: {
       maxWidth: '100px',
-    },
-  },
-  showDetailButton: {
-    margin: '12px 5px',
-    fontSize: '14px',
-    fontWeight: 'bold',
-    borderRadius: '5px',
-    width: '160px',
-  },
-  showDetailButtonOutlined: {
-    backgroundColor: 'transparent',
-    border: `1px solid ${theme.palette.primary.main}`,
-    color: primaryColor[0],
-    '&:hover': {
-      '& .MuiButton-label': {
-        color: 'white',
-      },
-    },
-    '& .MuiTouchRipple-root span': {
-      backgroundColor: primaryColor[0],
-    },
-  },
-  showDetailButtonContained: {
-    backgroundColor: primaryColor[0],
-    '& .MuiButton-label': {
-      color: 'white',
     },
   },
   title: {

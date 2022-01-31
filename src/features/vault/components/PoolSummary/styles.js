@@ -1,3 +1,5 @@
+import { hexToRgb } from 'assets/jss/material-kit-pro-react';
+
 const styles = theme => ({
   details: {
     display: 'flex',
@@ -7,13 +9,23 @@ const styles = theme => ({
   detailsPaused: {
     display: 'flex',
     alignItems: 'center',
-    background: theme.palette.background.paused,
+    background:
+      'rgba(' +
+      hexToRgb(theme.palette.background.paused) +
+      ', ' +
+      theme.palette.background.sandOpacity +
+      ')',
     borderRadius: '5px',
   },
   detailsRetired: {
     display: 'flex',
     alignItems: 'center',
-    background: theme.palette.background.retired,
+    background:
+      'rgba(' +
+      hexToRgb(theme.palette.background.retired) +
+      ', ' +
+      theme.palette.background.sandOpacity +
+      ')',
     borderRadius: '5px',
   },
   mobilePadding: {

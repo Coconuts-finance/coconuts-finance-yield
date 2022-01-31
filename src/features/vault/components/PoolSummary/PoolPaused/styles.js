@@ -1,9 +1,11 @@
+import { hexToRgb } from 'assets/jss/material-kit-pro-react';
+
 const styles = theme => ({
   container: {
     position: 'absolute',
     top: '0px',
     left: '0px',
-    backgroundColor: 'rgba(0,0,0,0.15)',
+    backgroundColor: 'rgba(' + hexToRgb(theme.palette.primary.main) + ',0.15)',
     width: '100%',
   },
   texts: {

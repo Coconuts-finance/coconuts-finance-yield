@@ -26,7 +26,11 @@ const Disclaimer = () => {
         {
           <Typography className={classes.disclaimer}>
             {t('Disclaimer')}
-            <a href="https://docs.coconuts.finance/security/risks" rel="noreferrer">
+            <a
+              href="https://chimera-1.gitbook.io/coconuts-finance/security"
+              rel="noreferrer"
+              target="_blank"
+            >
               <i className={`fas fa-book ${classes.linkIcon}`}></i>
             </a>
           </Typography>
