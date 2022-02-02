@@ -1,6 +1,4 @@
 import React, { memo } from 'react';
-import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Avatar from '@material-ui/core/Avatar';
 import AvatarGroup from '@material-ui/lab/AvatarGroup';
@@ -54,8 +52,6 @@ const PoolTitle = ({
   lowLiquidity,
   collateralCap,
 }) => {
-  const { chain } = useParams();
-
   const classes = useStyles();
   const { t } = useTranslation();
 
@@ -196,12 +192,12 @@ const PoolTitle = ({
           )}
         </div>
         {launchpool ? (
-          <Link to={`/${chain}/stake/pool/${launchpool.id}`} className={classes.btnBoost}>
+          <a className={classes.btnBoost} href={'/stake/pool/' + launchpool.id}>
             <img alt="Boost" src={require('images/stake/boost.svg')} height={15} />
             <span>
               <img alt="Fire" src={require('images/stake/fire.png')} height={30} />
             </span>
-          </Link>
+          </a>
         ) : (
           ''
         )}
