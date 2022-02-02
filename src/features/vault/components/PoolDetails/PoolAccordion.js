@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import AccordionDetails from '@material-ui/core/AccordionActions';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -25,6 +27,7 @@ TabContainer.propTypes = {
 const useStyles = makeStyles(styles);
 
 const PoolAccordion = ({ pool, balanceSingle, index, sharesBalance }) => {
+  const { chain } = useParams();
   const classes = useStyles();
   const sharedButtons = useSharedButtons();
   const { t } = useTranslation();
@@ -64,14 +67,15 @@ const PoolAccordion = ({ pool, balanceSingle, index, sharesBalance }) => {
                   rewards.
                 </Grid>
                 <Grid item xs={12} sm={4} style={{ textAlign: 'center' }}>
-                  <Button
-                    xs={5}
-                    md={2}
-                    className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonContained}`}
-                    href={`/stake/pool/${pool.useStake}`}
-                  >
-                    {t('Stake-Button-Stake-Tokens')}
-                  </Button>
+                  <Link to={`/${chain}/stake/pool/${pool.useStake}`}>
+                    <Button
+                      xs={5}
+                      md={2}
+                      className={`${sharedButtons.showDetailButton} ${sharedButtons.showDetailButtonContained}`}
+                    >
+                      {t('Stake-Button-Stake-Tokens')}
+                    </Button>
+                  </Link>
                 </Grid>
               </Grid>
             </TabContainer>
