@@ -1,34 +1,5 @@
 export const avalanchePools = [
   {
-    id: 'avalanche-cnc-usdc',
-    logo: 'single-assets/USDC.png',
-    name: 'USDC',
-    token: 'USDC',
-    tokenDescription: 'experimental',
-    tokenAddress: '0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
-    tokenDecimals: 6,
-    tokenDescriptionUrl: '#',
-    earnedToken: 'USDC.e',
-    earnedTokenDecimals: 6,
-    earnedTokenAddress: '0xdecde3d0e1367155b62dcd497b0a967d6aa41afd',
-    earnContractAddress: '0xDecdE3D0e1367155b62DCD497B0A967D6aa41Afd',
-    pricePerFullShare: 1,
-    tvl: 0,
-    oracle: 'tokens',
-    oracleId: 'USDC',
-    oraclePrice: 0,
-    depositsPaused: false,
-    status: 'active',
-    platform: 'yVaultV2',
-    assets: ['USDC.e'],
-    callFee: 0,
-    withdrawalFee: '0.0',
-    useStake: 0,
-    //addLiquidityUrl: 'https://app.gondola.finance/#/deposit/eth',
-    buyTokenUrl: 'https://snowtrace.io/address/0xdecde3d0e1367155b62dcd497b0a967d6aa41afd',
-  },
-  /*
-  {
     id: 'gondola-eth-zeth',
     logo: 'avax-pairs/ZETH.svg',
     name: 'zETH-ETH LP',
@@ -78,7 +49,6 @@ export const avalanchePools = [
     addLiquidityUrl: 'https://app.gondola.finance/#/deposit/usdt',
     buyTokenUrl: 'https://app.gondola.finance/#/swap/usdt',
   },
-  /*
   {
     id: 'gondola-dai-zdai-eol',
     logo: 'single-assets/DAI.svg',
@@ -627,5 +597,4 @@ export const avalanchePools = [
     buyTokenUrl:
       'https://app.pangolin.exchange/#/swap?inputCurrency=0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7&outputCurrency=0x60781C2586D68229fde47564546784ab3fACA982',
   },
-  */
 ];

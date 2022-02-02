@@ -1,11 +1,9 @@
 import React from 'react';
 //import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
 import Drawer from '@material-ui/core/Drawer';
@@ -19,8 +17,6 @@ import styles from './styles';
 const useStyles = makeStyles(styles);
 
 const Header = ({ links, isNightMode, setNightMode }) => {
-  const { chain } = useParams();
-
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const classes = useStyles();
   //const { t } = useTranslation();
@@ -32,50 +28,41 @@ const Header = ({ links, isNightMode, setNightMode }) => {
   return (
     <AppBar className={`${classes.appBar} ${classes.dark}`}>
       <Toolbar className={classes.container}>
-        <Link to={`/${chain}`}>
-          <Button className={classes.title}>
-            <Hidden xsDown>
-              <img
-                alt="Coconuts finance"
-                src={require(`assets/img/cnc-logo.svg`)}
-                height={'160px'}
-                className={classes.logo}
-              />
-            </Hidden>
-            <Hidden smUp>
-              <img
-                alt="Coconuts finance"
-                src={require(`assets/img/cnc-logo.svg`)}
-                height={'100px'}
-                className={classes.logo}
-              />
-            </Hidden>
-          </Button>
-        </Link>
+        <Button href="/" className={classes.title}>
+          <Hidden xsDown>
+            <img
+              alt="Coconuts finance"
+              src={require(`assets/img/cnc-logo.svg`)}
+              height={'160px'}
+              className={classes.logo}
+            />
+          </Hidden>
+          <Hidden smUp>
+            <img
+              alt="Coconuts finance"
+              src={require(`assets/img/cnc-logo.svg`)}
+              height={'100px'}
+              className={classes.logo}
+            />
+          </Hidden>
+        </Button>
+
         <div className={classes.middleNav}>
           <Hidden smDown>
-            <Link to={`/${chain}`}>
-              <Button className={classes.link}>
-                <span>Pools</span>
-              </Button>
-            </Link>
-            <Link to={`/${chain}/stake`}>
-              <Button className={classes.link}>
-                <span>Stake</span>
-              </Button>
-            </Link>
+            <Button className={classes.link} href="/">
+              <span>Pools</span>
+            </Button>
+            <Button className={classes.link} href="/stake">
+              <span>Stake</span>
+            </Button>
           </Hidden>
           <Hidden mdUp>
-            <Link to={`/${chain}`}>
-              <Button className={classes.link}>
-                <span>Pools</span>
-              </Button>
-            </Link>
-            <Link to={`/${chain}/stake`}>
-              <Button className={classes.link}>
-                <span>Stake</span>
-              </Button>
-            </Link>
+            <Button className={classes.link} href="/">
+              <span>Pools</span>
+            </Button>
+            <Button className={classes.link} href="/stake">
+              <span>Stake</span>
+            </Button>
           </Hidden>
         </div>
         <Hidden smDown implementation="css">

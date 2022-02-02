@@ -7,7 +7,7 @@ const initialState = {
   address: '',
   web3: null,
   connected: false,
-  networkId: Number(window.REACT_APP_NETWORK_ID),
+  networkId: Number(process.env.REACT_APP_NETWORK_ID),
 };
 
 export default function reducer(state = initialState, action) {

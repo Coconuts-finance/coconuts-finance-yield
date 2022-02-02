@@ -1,9 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
 import { hot, setConfig } from 'react-hot-loader';
 import store from './common/store';
 import routeConfig from './common/routeConfig';
+import history from './common/history';
 import { initializePriceCache } from './features/web3/fetchPrice';
 import { Helmet } from 'react-helmet';
 import { usePageMeta } from './features/common/getPageMeta';
@@ -64,7 +66,7 @@ function Root() {
         <meta property="og:description" content={getPageMeta('App-Meta-Description')} />
         <meta property="og:url" content={process.env.PUBLIC_URL || 'https://coconuts.finance'} />
       </Helmet>
-      <HashRouter>{children}</HashRouter>
+      <ConnectedRouter history={history}>{children}</ConnectedRouter>
     </Provider>
   );
 }

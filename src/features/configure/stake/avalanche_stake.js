@@ -1,7 +1,7 @@
 import { govPoolABI } from '../abi';
 
 export const avalancheStakePools = [
-  /*{
+  {
     id: 'bifi-avax',
     name: 'BIFI',
     logo: 'single-assets/BIFI.png',
@@ -32,5 +32,5 @@ export const avalancheStakePools = [
         },
       },
     ],
-  },*/
+  },
 ];

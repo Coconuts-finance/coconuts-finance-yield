@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import BigNumber from 'bignumber.js';
 import { byDecimals } from 'features/helpers/bignumber';
 import { useConnectWallet } from '../../home/redux/hooks';
@@ -19,7 +17,16 @@ import {
   useFetchWithdraw,
 } from '../redux/hooks';
 
-import { Avatar, Box, Dialog, Grid, makeStyles, TextField, Typography } from '@material-ui/core';
+import {
+  Avatar,
+  Box,
+  Dialog,
+  Grid,
+  Link,
+  makeStyles,
+  TextField,
+  Typography,
+} from '@material-ui/core';
 
 import TwitterIcon from '@material-ui/icons/Twitter';
 import TelegramIcon from '@material-ui/icons/Telegram';
@@ -35,8 +42,6 @@ import { /*getPageMeta,*/ usePageMeta } from '../../common/getPageMeta';
 const useStyles = makeStyles(styles);
 
 export default function StakePool(props) {
-  const { chain } = useParams();
-
   const classes = useStyles();
   const { t /*, i18n*/ } = useTranslation();
   const { address } = useConnectWallet();
@@ -255,9 +260,9 @@ export default function StakePool(props) {
         />
       </Helmet>
       <Grid item xs={6} className={classes.mb}>
-        <Link to={`/${chain}/stake`}>
-          <Button className={classes.roundedBtn}>{t('Stake-Button-Back')}</Button>
-        </Link>
+        <Button href="/stake" className={classes.roundedBtn}>
+          {t('Stake-Button-Back')}
+        </Button>
       </Grid>
       <Grid item xs={6} className={classes.mb}>
         <Typography className={classes.countdown}>
@@ -442,24 +447,24 @@ export default function StakePool(props) {
           <Grid item xs={12}>
             <Divider className={classes.divider} />
             {partner.social.twitter ? (
-              <a href={partner.social.twitter}>
+              <Link href={partner.social.twitter}>
                 <TwitterIcon />
-              </a>
+              </Link>
             ) : (
               ''
             )}
             {partner.social.telegram ? (
-              <a href={partner.social.telegram}>
+              <Link href={partner.social.telegram}>
                 <TelegramIcon />
-              </a>
+              </Link>
             ) : (
               ''
             )}
             {partner.website ? (
               <Grid item xs={12}>
-                <a target="_blank" href={partner.website}>
+                <Link target="_blank" href={partner.website}>
                   {partner.website}
-                </a>
+                </Link>
               </Grid>
             ) : (
               ''
