@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import { useFetchHalfTime, useFetchPoolData } from '../redux/hooks';
 import {
   Grid,
@@ -22,6 +24,7 @@ import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
 const useStyles = makeStyles(styles);
 
 export default function StakePools(props) {
+  const { chain } = useParams();
   const classes = useStyles();
   const { t } = useTranslation();
   const { pools } = useFetchPoolData();
@@ -155,16 +158,13 @@ export default function StakePools(props) {
                   <Typography className={classes.subtitle} variant="body2">
                     {pool.token === 'mooAutoWbnbFixed' ? 'mooAutoWBNB' : pool.token}
                   </Typography>
-                  <Button
-                    xs={5}
-                    md={2}
-                    className={classes.stakeBtn}
-                    href={`/stake/pool/${pool.id}`}
-                  >
-                    {pools[index].status === 'closed'
-                      ? t('Stake-Button-Claim')
-                      : t('Stake-Button-Stake')}
-                  </Button>
+                  <Link to={`/${chain}/stake/pool/${pool.id}`}>
+                    <Button xs={5} md={2} className={classes.stakeBtn}>
+                      {pools[index].status === 'closed'
+                        ? t('Stake-Button-Claim')
+                        : t('Stake-Button-Stake')}
+                    </Button>
+                  </Link>
                   {pools[index].status === 'closed' || pools[index].status === 'soon' ? (
                     <Box className={classes.ribbon}>
                       <span className={pools[index].status}>{pools[index].countdown}</span>

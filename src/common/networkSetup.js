@@ -35,6 +35,7 @@ export const networkSettings = {
     rpcUrls: ['https://http-mainnet.hecochain.com'],
     blockExplorerUrls: ['https://hecoinfo.com/'],
   },
+  */
   43114: {
     chainId: `0x${parseInt(43114, 10).toString(16)}`,
     chainName: 'Avalanche C-Chain',
@@ -46,7 +47,7 @@ export const networkSettings = {
     rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
     blockExplorerUrls: ['https://cchain.explorer.avax.network/'],
   },
-  */
+
   137: {
     chainId: `0x${parseInt(137, 10).toString(16)}`,
     chainName: 'Polygon Mainnet',
@@ -82,6 +83,6 @@ export const networkSetup = chainId => {
 };
 
 export const getRpcUrl = () => {
-  const settings = networkSettings[process.env.REACT_APP_NETWORK_ID];
-  return settings.rpcUrls[0];
+  const settings = networkSettings[window.REACT_APP_NETWORK_ID];
+  return settings.rpcUrls[~~(settings.rpcUrls.length * Math.random())];
 };
