@@ -55,6 +55,9 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             <Button className={classes.link} href="/stake">
               <span>Stake</span>
             </Button>
+            <Button className={classes.link} href="/airdrop">
+              <span>Airdrop</span>
+            </Button>
           </Hidden>
           <Hidden mdUp>
             <Button className={classes.link} href="/">
@@ -62,6 +65,9 @@ const Header = ({ links, isNightMode, setNightMode }) => {
             </Button>
             <Button className={classes.link} href="/stake">
               <span>Stake</span>
+            </Button>
+            <Button className={classes.link} href="/airdrop">
+              <span>Airdrop</span>
             </Button>
           </Hidden>
         </div>
