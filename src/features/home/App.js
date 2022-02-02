@@ -56,9 +56,14 @@ export default function App({ children }) {
       address &&
       !connectWalletPending &&
       networkId &&
-      Boolean(networkId !== Number(process.env.REACT_APP_NETWORK_ID))
+      Boolean(networkId !== Number(window.REACT_APP_NETWORK_ID))
     ) {
-      networkSetup(process.env.REACT_APP_NETWORK_ID).catch(setNetworkError);
+      console.log('baboum');
+      console.log('before : ');
+      console.log(networkError);
+      networkSetup(Number(window.REACT_APP_NETWORK_ID)).catch(setNetworkError);
+      console.log('after : ');
+      console.log(networkError);
     }
   }, [web3, address, networkId, connectWalletPending, t]);
 
@@ -114,8 +119,14 @@ export default function App({ children }) {
                   />
                   <div className={classes.container}>
                     <div className={classes.children}>
-                      {networkError && <NetworkError network={process.env.REACT_APP_NETWORK_ID} />}
-                      {Boolean(networkId === Number(process.env.REACT_APP_NETWORK_ID)) && children}
+                      {Boolean(networkId === Number(window.REACT_APP_NETWORK_ID)) ? (
+                        children
+                      ) : (
+                        <NetworkError
+                          network={window.REACT_APP_NETWORK_ID}
+                          currentNetwork={networkId}
+                        />
+                      )}
                       <Notifier />
                     </div>
                   </div>
