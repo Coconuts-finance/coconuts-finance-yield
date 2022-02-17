@@ -62,7 +62,7 @@ export const polygonPools = [
     tokenAddress: '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6',
     tokenDecimals: 8,
     tokenDescriptionUrl: '#',
-    earnedToken: 'WBTC',
+    earnedToken: 'acwbtc',
     earnedTokenDecimals: 8,
     earnedTokenAddress: '0xA5A12d8E381A753f2B4E9Ffe88e64E043377eB8e',
     earnContractAddress: '0xA5A12d8E381A753f2B4E9Ffe88e64E043377eB8e',
