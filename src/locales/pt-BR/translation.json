@@ -2,6 +2,7 @@
   "App-Meta-Description": "O Otimizador de Rendimento Multichain",
   "Disclaimer": "Usar contratos inteligentes, tokens e criptoativos apresenta riscos. Faça sua própria pesquisa antes de investir. Mais detalhes aqui ",
   "Network-Error": "Conecte-se à {{network}} por favor.",
+  "Network-Error-Switch": "Ou mude para a versão <1>{{name}}</1>.",
   "Vault-Wallet": "Carteira",
   "Vault-ConnectWallet": "Conectar à Carteira",
   "Vault-Balance": "Saldo",

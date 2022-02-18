@@ -17,7 +17,7 @@ export function fetchApys() {
     return new Promise((resolve, reject) => {
       //const cacheBuster = getApiCacheBuster();
       //const url = `https://api.robo-vault.com/vault?_=${cacheBuster}`
-      const url = `${process.env.REACT_APP_API_URL}/api/apys?network=${process.env.REACT_APP_NETWORK_ID}`;
+      const url = `${process.env.REACT_APP_API_URL}/api/apys?network=${window.REACT_APP_NETWORK_ID}`;
       const doRequest = axios.get(url, { crossDomain: true });
 
       doRequest.then(
