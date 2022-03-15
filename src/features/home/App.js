@@ -6,7 +6,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Header from 'components/Header/Header';
 import HeaderLinks from 'components/HeaderLinks/HeaderLinks';
 import NetworksProvider from 'components/NetworksProvider/NetworksProvider';
-import NetworksModal from 'components/NetworksModal/NetworksModal';
 import NetworkError from 'components/NetworkError/NetworkError';
 
 import { useTranslation } from 'react-i18next';
@@ -58,12 +57,7 @@ export default function App({ children }) {
       networkId &&
       Boolean(networkId !== Number(window.REACT_APP_NETWORK_ID))
     ) {
-      console.log('baboum');
-      console.log('before : ');
-      console.log(networkError);
       networkSetup(Number(window.REACT_APP_NETWORK_ID)).catch(setNetworkError);
-      console.log('after : ');
-      console.log(networkError);
     }
   }, [web3, address, networkId, connectWalletPending, t]);
 
@@ -72,7 +66,6 @@ export default function App({ children }) {
       <ThemeProvider theme={theme}>
         <SnackbarProvider>
           <NetworksProvider>
-            <NetworksModal />
             <div
               className={classes.page_outer}
               style={{

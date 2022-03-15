@@ -27,6 +27,7 @@ const styles = theme => ({
     marginLeft: '16px',
   },
   networkName: {
+    color: theme.palette.text.primary,
     margin: '0 0 0 8px',
     fontWeight: 'bold',
   },

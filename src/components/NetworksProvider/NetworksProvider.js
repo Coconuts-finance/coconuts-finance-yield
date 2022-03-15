@@ -9,12 +9,14 @@ export const networks = [
     asset: 'BNB',
     id: '56',
     url: '/#/bsc',
+    hash: '/bsc',
   },
   {
     name: 'HECO',
     asset: 'HT',
     id: '128',
     url: '/#/heco',
+    hash: '/heco',
   },
   */
   {
@@ -22,12 +24,14 @@ export const networks = [
     asset: 'AVAX',
     id: '43114',
     url: '/#/avax',
+    hash: '/avax',
   },
   {
     name: 'POLYGON',
     asset: 'POLYGON',
     id: '137',
     url: '/#/polygon',
+    hash: '/polygon',
   },
   /*
   {
@@ -35,6 +39,7 @@ export const networks = [
     asset: 'FTM',
     id: '250',
     url: '/#/fantom',
+    hash: '/fantom',
   },
   */
 ];

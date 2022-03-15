@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 import TVLLoader from './TVLLoader/TVLLoader';
-//import NetworksToggle from 'components/NetworksToggle/NetworksToggle';
+import NetworksToggle from 'components/NetworksToggle/NetworksToggle';
 import { useConnectWallet } from 'features/home/redux/hooks';
 import { useFetchBalances, useFetchVaultsData, useFetchApys } from '../../redux/hooks';
 import VisiblePools from '../VisiblePools/VisiblePools';
@@ -52,13 +52,18 @@ export default function Pools() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [address, web3, fetchBalances, fetchVaultsData]);
 
+  const activePoolCount = pools.filter(pool => pool.status === 'active').length;
+
   return (
     <Grid container className={classes.container}>
       <Grid item xs={6}>
-        {
-          //<h1 className={classes.title}>{t('Vault-Network')}</h1>
-          //<NetworksToggle />
-        }
+        <h1 className={classes.title}>{t('Select-Network')}</h1>
+        <NetworksToggle />
+        {fetchVaultsDataDone && activePoolCount && (
+          <>
+            <span className={classes.text}>{`${activePoolCount} ${t('Vault-MainTitle')}`}</span>
+          </>
+        )}
       </Grid>
       <Grid item xs={6}>
         <div className={classes.tvl}>

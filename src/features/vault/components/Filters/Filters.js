@@ -68,7 +68,7 @@ const Filters = ({
 
   return (
     <Grid container spacing={2} className={classes.container}>
-      <Grid item xs={6} sm={4} md={3}>
+      <Grid item xs={6} sm={4} md={4} lg={2}>
         <Button className={classes.reset} onClick={resetFilter}>
           {t('Filters-Reset')}
         </Button>
@@ -88,7 +88,24 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={6} sm={4} md={3}>
+      <Grid item xs={6} sm={4} md={4} lg={2}>
+        <FormControl>
+          <FormControlLabel
+            className={classes.label}
+            control={
+              <Checkbox
+                checked={!filters.hideDecomissioned}
+                onChange={() => toggleFilter('hideDecomissioned')}
+                color="primary"
+              />
+            }
+            // TODO: translate labels
+            label={t('Retired-Vaults')}
+          />
+        </FormControl>
+      </Grid>
+
+      <Grid item xs={12} sm={4} md={4} lg={2}>
         <FormControl>
           <FormControlLabel
             className={classes.label}
@@ -105,7 +122,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={6} sm={4} md={3}>
+      <Grid item xs={6} sm={6} md={6} lg={3}>
         <FormControl className={classes.selectorContainer}>
           <Autocomplete
             value={options2.find(option => option.value === platform)}
@@ -128,7 +145,7 @@ const Filters = ({
         </FormControl>
       </Grid>
 
-      <Grid item xs={6} sm={4} md={3}>
+      <Grid item xs={6} sm={6} md={6} lg={3}>
         <FormControl className={classes.selectorContainer}>
           <Autocomplete
             value={options.find(option => option.value === asset)}

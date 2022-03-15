@@ -32,12 +32,10 @@ const NetworkError = ({ network, currentNetwork }) => {
       <Typography className={classes.networkError}>
         {t('Network-Error', { network: networkSettings[network].chainName })}
         {currentNetworkData && (
-          <Typography className={classes.networkError}>
-            <Trans i18nKey="Network-Error-Switch">
-              Or switch to <Button onClick={reloadPage}>{{ name: currentNetworkData.name }}</Button>{' '}
-              version.
-            </Trans>
-          </Typography>
+          <Trans i18nKey="Network-Error-Switch">
+            &nbsp;Or switch to{' '}
+            <Button onClick={reloadPage}>{{ name: currentNetworkData.name }}</Button> version.
+          </Trans>
         )}
       </Typography>
     </Grid>

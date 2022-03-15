@@ -1,19 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { memo, useCallback, useEffect } from 'react';
 import Modal from 'react-modal';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import Close from '@material-ui/icons/Close';
 
 import styles from './styles';
-import { useNetworks } from 'components/NetworksProvider/NetworksProvider';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@material-ui/core';
+import { allNetworks } from 'network';
 
 const useStyles = makeStyles(styles);
 
-const NetworksModal = () => {
+const NetworksModal = memo(function NetworksModal({ isOpen, handleClose, currentNetwork }) {
   const classes = useStyles();
-  const { isModalOpen, closeModal, networks, currentNetwork } = useNetworks();
   const { t } = useTranslation();
   const theme = useTheme();
 
@@ -21,18 +20,21 @@ const NetworksModal = () => {
     Modal.setAppElement('#root');
   }, []);
 
-  const handleNetworkClick = network => {
-    if (network.id === currentNetwork.id) {
-      closeModal();
-    } else {
-      window.open(network.url, '_self');
-    }
-  };
-
+  const handleNetworkClick = useCallback(
+    network => {
+      if (network.id === currentNetwork.id) {
+        handleClose();
+      } else {
+        window.location.hash = network.hash;
+        window.location.reload();
+      }
+    },
+    [currentNetwork, handleClose]
+  );
   return (
     <Modal
-      isOpen={isModalOpen}
-      onRequestClose={closeModal}
+      isOpen={isOpen}
+      onRequestClose={handleClose}
       style={{
         content: {
           backgroundColor: theme.palette.background.primary,
@@ -45,12 +47,12 @@ const NetworksModal = () => {
         },
       }}
     >
-      <IconButton className={classes.close} onClick={closeModal}>
+      <IconButton className={classes.close} onClick={handleClose}>
         <Close />
       </IconButton>
       <h1 className={classes.title}>{t('Select-Network')}</h1>
       <div className={classes.networks}>
-        {networks.map(network => (
+        {allNetworks.map(network => (
           <div
             onClick={() => handleNetworkClick(network)}
             className={classes.networkContainer}
@@ -58,7 +60,7 @@ const NetworksModal = () => {
           >
             <img
               className={classes.logo}
-              src={require(`images/single-assets/${network.asset}.png`)}
+              src={require(`images/networks/${network.asset}.svg`)}
               alt={`${currentNetwork.asset} logo`}
             />
             <div className={classes.tag}>
@@ -70,6 +72,6 @@ const NetworksModal = () => {
       </div>
     </Modal>
   );
-};
+});
 
 export default NetworksModal;

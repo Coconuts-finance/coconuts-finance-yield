@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import useFilterStorage from '../../home/hooks/useFiltersStorage';
 
 const DEFAULT = {
-  hideDecomissioned: false,
+  hideDecomissioned: true,
   hideZeroBalances: false,
   hideZeroVaultBalances: false,
   showBoosted: false,
@@ -41,9 +41,9 @@ const useFilteredPools = (pools, tokens) => {
     filteredPools = hideZeroVaultBalances(filteredPools, tokens);
   }
 
-  // if (filters.hideDecomissioned) {
-  //   filteredPools = hideDecomissioned(filteredPools, tokens);
-  // }
+  if (filters.hideDecomissioned) {
+    filteredPools = hideDecomissioned(filteredPools, tokens);
+  }
 
   if (filters.showBoosted) {
     filteredPools = showBoosted(filteredPools);
@@ -66,7 +66,6 @@ function showBoosted(pools) {
   });
 }
 
-/*
 function hideDecomissioned(pools, tokens) {
   return pools.filter(pool => {
     return (
@@ -75,7 +74,7 @@ function hideDecomissioned(pools, tokens) {
     );
   });
 }
-*/
+
 function hideZeroBalances(pools, tokens) {
   return pools.filter(pool => {
     if (tokens[pool.token]) {
