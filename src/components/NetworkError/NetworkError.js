@@ -29,15 +29,22 @@ const NetworkError = ({ network, currentNetwork }) => {
 
   return (
     <Grid container item className={classes.root} justify="center">
-      <Typography className={classes.networkError}>
-        {t('Network-Error', { network: networkSettings[network].chainName })}
-        {currentNetworkData && (
-          <Trans i18nKey="Network-Error-Switch">
-            &nbsp;Or switch to{' '}
-            <Button onClick={reloadPage}>{{ name: currentNetworkData.name }}</Button> version.
-          </Trans>
-        )}
-      </Typography>
+      <div className={classes.networkErrorContainer}>
+        <Typography className={classes.networkError}>
+          {t('Network-Error', { network: networkSettings[network].chainName })}
+        </Typography>
+        <Typography className={classes.networkError}>
+          {currentNetworkData && (
+            <Trans i18nKey="Network-Error-Switch">
+              &nbsp;Or switch to{' '}
+              <Button className={classes.networkButton} onClick={reloadPage}>
+                {{ name: currentNetworkData.name }}
+              </Button>{' '}
+              version.
+            </Trans>
+          )}
+        </Typography>
+      </div>
     </Grid>
   );
 };
