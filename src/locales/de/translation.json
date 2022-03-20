@@ -2,7 +2,7 @@
   "App-Meta-Description": "Rendite-Optimierer für Einzelanlagen",
   "Disclaimer": "Das Benützen von Smart Contracts, Tokens und Crypto birgt Risiken. Recherchieren Sie selbst, bevor Sie investieren. Weitere Einzelheiten hier ",
   "Network-Error": "Verbinden Sie sich bitte mit {{network}}.",
-  "Network-Error-Switch": "Oder wechseln Sie zur <1>{{name}}</1>-Version.",
+  "Network-Error-Switch": "Oder wechseln Sie zur <2>{{name}}</2>-Version.",
   "Vault-Wallet": "Wallet",
   "Vault-ConnectWallet": "Wallet verbinden",
   "Vault-Balance": "Saldo",

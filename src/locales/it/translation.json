@@ -3,7 +3,7 @@
   "Disclaimer": "Interagire con smart contract, token e crypto comporta sempre dei rischi. Documentati personalmente prima di investire. Maggiori dettagli qui ",
   "Disclaimer-link": "here",
   "Network-Error": "Connettiti a {{network}} per favore",
-  "Network-Error-Switch": "Oppure passa alla versione <1>{{name}}</1>.",
+  "Network-Error-Switch": "Oppure passa alla versione <2>{{name}}</2>.",
   "Vault-Wallet": "Portafoglio",
   "Vault-ConnectWallet": "Collega il portafoglio",
   "Vault-Balance": "Saldo",

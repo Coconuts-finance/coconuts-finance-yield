@@ -2,7 +2,7 @@
   "App-Meta-Description": "Tối ưu hoá lợi nhuận cho tài sản đơn lẻ",
   "Disclaimer": "Sử dụng hợp đồng thông minh, mã token và tiền điện tử tiềm ẩn nhiều rủi ro. Bạn nên nghiên cứu kỹ trước khi đầu tư. Thông tin chi tiết tại đây",
   "Network-Error": "Vui lòng kết nối tới {{network}}",
-  "Network-Error-Switch": "Hoặc chuyển sang phiên bản <1>{{name}}</1>.",
+  "Network-Error-Switch": "Hoặc chuyển sang phiên bản <2>{{name}}</2>.",
   "Vault-Wallet": "Ví",
   "Vault-ConnectWallet": "Kết nối ví",
   "Vault-Balance": "Số dư",

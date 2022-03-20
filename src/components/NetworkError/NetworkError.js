@@ -36,7 +36,7 @@ const NetworkError = ({ network, currentNetwork }) => {
         <Typography className={classes.networkError}>
           {currentNetworkData && (
             <Trans i18nKey="Network-Error-Switch">
-              &nbsp;Or switch to{' '}
+              Or switch to{' '}
               <Button className={classes.networkButton} onClick={reloadPage}>
                 {{ name: currentNetworkData.name }}
               </Button>{' '}
